@@ -61,48 +61,49 @@
             transition: 0.3s;
         }
         .btn-blade:active { transform: scale(0.98); }
+        
+        /* BOTÃO DE RECUSA */
+        .btn-refusal {
+            display: inline-block;
+            margin-top: 15px;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 400;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+        .btn-refusal:hover { color: rgba(255,255,255,0.6); }
+
         .microcopy { display: block; font-size: 0.65rem; color: #555; margin-top: 12px; letter-spacing: 1px; text-transform: uppercase; }
 
         /* ⚠️ DOBRA DE CONFRONTO */
         .confrontation { background: rgba(255,0,0,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 50px 30px; border-radius: 15px; margin: 40px 0; }
         .confrontation-item { font-size: 0.9rem; color: #bbb; margin-bottom: 20px; display: flex; align-items: center; }
         .confrontation-item::before { content: "✕"; color: var(--primary); margin-right: 15px; font-weight: bold; }
-        .confrontation-footer { text-align: center; color: #444; font-size: 0.85rem; font-style: italic; margin-top: 30px; }
 
         /* 🧠 QUEBRA DE CRENÇA */
         .belief-break { text-align: center; padding: 50px 0; }
         .belief-break b { color: var(--accent); font-size: 1.3rem; display: block; margin: 10px 0; }
 
-        /* 📦 CONTEÚDO E MÉTODO */
-        .method-section { text-align: center; padding: 40px 0; border-top: 1px solid #111; }
-        .method-section h3 { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; margin-bottom: 30px; color: #fff; }
+        /* 📦 CONTEÚDO */
         .content-card { background: #080808; border: 1px solid #1a1a1a; padding: 20px; border-radius: 10px; margin-bottom: 15px; text-align: left; }
         .content-card h4 { font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--accent); margin-bottom: 5px; }
         .content-card p { font-size: 0.85rem; color: #777; }
-
-        /* 🎁 BÔNUS */
-        .bonus-box { border: 1px dashed var(--accent); padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center; }
-        .bonus-badge { background: var(--accent); color: #000; font-size: 0.6rem; font-weight: 900; padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 15px; }
 
         /* 🔥 VISUALIZAÇÃO */
         .visual-box { background: radial-gradient(circle at top, rgba(255,255,255,0.03), transparent); padding: 45px 20px; border-radius: 15px; margin: 40px 0; text-align: center; }
         .visual-item { font-size: 1rem; color: #fff; margin: 15px 0; }
 
-        /* 🧠 BENEFÍCIOS */
-        .benefit-item { display: flex; align-items: center; margin-bottom: 15px; font-size: 0.9rem; color: #aaa; }
-        .benefit-item::before { content: "✔"; color: var(--accent); margin-right: 15px; font-weight: bold; }
-
         /* ⭐ PROVA SOCIAL */
         .t-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 20px; border-radius: 10px; margin-bottom: 15px; }
-        .t-user { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .t-stars { color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; }
+        .t-stars { color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 5px; display: block; }
         .t-copy { font-size: 0.85rem; color: #eee; font-style: italic; }
         .t-handle { display: block; font-size: 0.75rem; color: #555; margin-top: 8px; font-family: monospace; }
 
-        /* 💰 OFERTA E URGÊNCIA */
-        .offer-section { text-align: center; padding: 60px 0; border-top: 1px solid #111; }
-        #timer { font-family: 'Courier New', monospace; font-size: 3.5rem; font-weight: 900; color: #fff; margin: 20px 0; }
-        .price-new { font-size: 4.5rem; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1; margin: 10px 0; }
+        /* 💰 OFERTA */
+        #timer { font-family: 'Courier New', monospace; font-size: 3.5rem; font-weight: 900; color: #fff; margin: 20px 0; text-align: center; }
+        .price-new { font-size: 4.5rem; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1; margin: 10px 0; text-align: center; }
 
         /* 💣 GATILHO FINAL */
         .final-trigger { background: rgba(255,255,255,0.02); padding: 35px 25px; border-radius: 12px; margin: 40px 0; text-align: center; border-left: 3px solid var(--primary); }
@@ -115,9 +116,8 @@
         footer { background: #000; padding: 60px 0; border-top: 1px solid #1a1a1a; text-align: center; }
         .footer-email { color: #ffffff !important; font-weight: 900; font-size: 1.2rem; text-decoration: none; display: block; margin: 15px 0; }
         .social-icons { display: flex; justify-content: center; gap: 25px; margin: 30px 0; }
-        .social-icons svg { width: 22px; fill: #444; transition: 0.3s; }
-        .social-icons a:hover svg { fill: #fff; }
-        .legal-links a { color: #333; font-size: 0.65rem; text-decoration: none; margin: 0 10px; text-transform: uppercase; }
+        .social-icons svg { width: 22px; fill: #444; }
+        .legal-links a { color: #333; font-size: 0.65rem; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
@@ -147,7 +147,7 @@
             <div class="confrontation-item">Você pensa demais antes de agir</div>
             <div class="confrontation-item">Você não sabe o que dizer na hora</div>
             <div class="confrontation-item">Você sente que não é levado a sério</div>
-            <p class="confrontation-footer">E o pior… você sabe disso.</p>
+            <p style="text-align: center; color: #444; font-size: 0.85rem; font-style: italic; margin-top: 30px;">E o pior… você sabe disso.</p>
         </div>
 
         <div class="belief-break">
@@ -157,9 +157,9 @@
         </div>
     </section>
 
-    <section class="container method-section">
-        <h2 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--primary); margin-bottom:10px;">O CAMINHO DEFINITIVO</h2>
-        <h3>MÉTODO DA MÃO OCULTA</h3>
+    <section class="container" style="padding: 40px 0; border-top: 1px solid #111;">
+        <h2 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--primary); text-align:center; margin-bottom:10px;">O MÉTODO</h2>
+        <h3 style="font-family:'Syncopate'; font-size:1.4rem; text-align:center; margin-bottom:30px;">MÉTODO DA MÃO OCULTA</h3>
         
         <div class="content-card"><h4>Método da Mão Oculta 1</h4><p>Domínio do caos mental e reações instintivas.</p></div>
         <div class="content-card"><h4>Método da Mão Oculta 2</h4><p>Postura e Linguagem da Autoridade Silenciosa.</p></div>
@@ -171,11 +171,10 @@
             <p>Exercícios de aplicação real para o seu dia a dia.</p>
         </div>
 
-        <div class="bonus-box">
-            <span class="bonus-badge">BÔNUS EXCLUSIVO</span>
-            <h4 style="font-size:0.9rem; color:#fff; margin-bottom:5px;">Segredos da mente milionária</h4>
+        <div style="border: 1px dashed var(--accent); padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center;">
+            <span style="background:var(--accent); color:#000; font-size:0.6rem; font-weight:900; padding:3px 10px; border-radius:3px;">BÔNUS</span>
+            <h4 style="font-size:0.9rem; color:#fff; margin:10px 0 5px;">Segredos da mente milionária</h4>
             <h4 style="font-size:0.9rem; color:#fff; margin-bottom:15px;">O poder do networking</h4>
-            <p style="font-size:0.75rem; color:#666;">Aceleradores de evolução pessoal.</p>
         </div>
     </section>
 
@@ -186,64 +185,53 @@
         <div class="visual-item">Você sendo levado a sério automaticamente</div>
     </section>
 
-    <section class="container" style="padding-bottom: 40px;">
-        <div class="benefit-item">Controlar suas ações sob pressão</div>
-        <div class="benefit-item">Parar de parecer inseguro</div>
-        <div class="benefit-item">Influenciar pessoas naturalmente</div>
-        <div class="benefit-item">Ter mais presença e respeito</div>
-        <div class="benefit-item">Tomar decisões com clareza</div>
-        <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:25px; font-weight: 600;">Sem precisar fingir. Sem parecer forçado.</p>
+    <section class="container">
+        <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:30px;">
+            <p style="font-size:0.9rem; color:#aaa;">✔ Controlar suas ações sob pressão</p>
+            <p style="font-size:0.9rem; color:#aaa;">✔ Parar de parecer inseguro</p>
+            <p style="font-size:0.9rem; color:#aaa;">✔ Influenciar pessoas naturalmente</p>
+            <p style="font-size:0.9rem; color:#aaa;">✔ Ter mais presença e respeito</p>
+            <p style="font-size:0.9rem; color:#aaa;">✔ Tomar decisões com clareza</p>
+        </div>
+        <p style="text-align:center; font-size:0.85rem; color:#666; font-weight: 600;">Sem precisar forçar. Sem parecer alguém que você não é.</p>
     </section>
 
-    <section class="container">
-        <h3 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--accent); text-align:center; margin-bottom:30px;">FEEDBACK DOS MEMBROS</h3>
-        
+    <section class="container" style="padding: 60px 0;">
         <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★★</div></div>
+            <span class="t-stars">★★★★★</span>
             <p class="t-copy">Usei isso numa conversa e senti na hora.</p>
             <span class="t-handle">— @victorxz</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★</div></div>
+            <span class="t-stars">★★★★★</span>
             <p class="t-copy">Parei de travar total. O método é absurdo.</p>
             <span class="t-handle">— @joaovr_</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★★</div></div>
-            <p class="t-copy">Mudou minha postura. Sinto que as pessoas me respeitam mais.</p>
+            <span class="t-stars">★★★★★</span>
+            <p class="t-copy">Mudou minha postura. As pessoas me respeitam mais.</p>
             <span class="t-handle">— @caiosilva</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★</div></div>
-            <p class="t-copy">Simples e direto. Vale muito a pena.</p>
-            <span class="t-handle">— @gui.snt</span>
-        </div>
-        <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★★</div></div>
+            <span class="t-stars">★★★★</span>
             <p class="t-copy">Muito prático. Mudança visível em poucos dias.</p>
             <span class="t-handle">— @mtheus_</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★</div></div>
-            <p class="t-copy">Vale muito a pena se você quer ser respeitado.</p>
-            <span class="t-handle">— @r.lima</span>
-        </div>
-        <div class="t-card">
-            <div class="t-user"><div class="t-stars">★★★★★</div></div>
+            <span class="t-stars">★★★★★</span>
             <p class="t-copy">Funciona mesmo. Clareza mental total agora.</p>
             <span class="t-handle">— @andrezin</span>
         </div>
     </section>
 
-    <section id="checkout" class="container offer-section">
-        <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.65rem; letter-spacing:1px; margin-bottom: 10px;">ESSA CONDIÇÃO PODE SAIR DO AR A QUALQUER MOMENTO</p>
+    <section id="checkout" class="container" style="padding-top: 60px;">
+        <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.65rem; text-align:center; letter-spacing:1px;">ESSA CONDIÇÃO PODE SAIR DO AR A QUALQUER MOMENTO</p>
         <div id="timer">57:36:00</div>
         
-        <div style="color: #444; text-decoration: line-through; font-size: 1.1rem;">De R$ 97,90</div>
+        <div style="color: #444; text-decoration: line-through; font-size: 1.1rem; text-align: center;">De R$ 97,90</div>
         <div class="price-new">R$ 29,90</div>
-        <p style="font-size:0.85rem; color:#666; margin-bottom:40px;">Menos que um lanche para mudar sua forma de agir</p>
-
-        <div style="font-size:0.65rem; color:#333; text-transform:uppercase; margin-bottom:40px; letter-spacing:1px;">
+        
+        <div style="font-size:0.65rem; color:#333; text-transform:uppercase; margin:40px 0; text-align:center; letter-spacing:1px;">
             🛡️ Pagamento 100% seguro • Seus dados protegidos <br> 
             <b>Acesso enviado automaticamente após pagamento</b>
         </div>
@@ -257,6 +245,8 @@
         <div class="btn-wrapper">
             <a href="https://pay.kiwify.com.br/SUA_ID_AQUI" class="btn-blade">QUERO ASSUMIR O CONTROLE AGORA</a>
             <span class="microcopy">Acesso imediato • Sem risco</span>
+            
+            <a href="#" class="btn-refusal">“Não, quero continuar como estou”</a>
         </div>
     </section>
 
@@ -274,7 +264,7 @@
 
     <footer>
         <div class="container">
-            <p style="font-size:0.7rem; color:#444; text-transform:uppercase; letter-spacing:2px; margin-bottom: 5px;">Suporte Prioritário:</p>
+            <p style="font-size:0.7rem; color:#444; text-transform:uppercase; letter-spacing:2px;">Suporte Prioritário:</p>
             <a href="mailto:evoluglow03@gmail.com" class="footer-email">evoluglow03@gmail.com</a>
             
             <div class="social-icons">
@@ -297,15 +287,14 @@
         const ctx = canvas.getContext('2d');
         let particles = [];
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.addEventListener('resize', resize);
-        resize();
+        window.addEventListener('resize', resize); resize();
         class Particle {
             constructor() { this.reset(); }
             reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.2; this.speed = Math.random() * 0.15; this.opacity = Math.random() * 0.25; }
             update() { this.y -= this.speed; if (this.y < -10) this.reset(); }
             draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(255,255,255,${this.opacity})`; ctx.fill(); }
         }
-        for (let i = 0; i < 60; i++) particles.push(new Particle());
+        for (let i = 0; i < 50; i++) particles.push(new Particle());
         function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
         animate();
 

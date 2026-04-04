@@ -35,12 +35,11 @@
 
         .container { width: 90%; max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
 
-        /* PRIMEIRA DOBRA */
+        /* 🧲 PRIMEIRA DOBRA */
         .hero { text-align: center; padding: 60px 0 40px; }
         .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; line-height: 1.3; margin-bottom: 25px; letter-spacing: -1px; }
         .hero h1 span { color: var(--primary); display: block; font-size: 1.8rem; font-weight: 900; margin-top: 10px; text-shadow: 0 0 20px var(--shadow-red); }
-        .hero p { font-size: 0.95rem; color: #fff; font-weight: 400; margin-bottom: 15px; }
-        .hero .sub-text { font-size: 0.9rem; color: #888; font-weight: 300; }
+        .hero p { font-size: 0.95rem; color: #fff; margin-bottom: 15px; }
 
         /* BOTOES */
         .btn-wrapper { text-align: center; margin: 30px 0; }
@@ -64,66 +63,61 @@
         .btn-blade:active { transform: scale(0.98); }
         .microcopy { display: block; font-size: 0.65rem; color: #555; margin-top: 12px; letter-spacing: 1px; text-transform: uppercase; }
 
-        /* DOBRA DE CONFRONTO */
-        .confrontation { background: rgba(255,0,0,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 45px 25px; border-radius: 15px; margin: 40px 0; }
-        .confrontation-item { font-size: 0.9rem; color: #bbb; margin-bottom: 15px; display: flex; align-items: center; }
+        /* ⚠️ DOBRA DE CONFRONTO */
+        .confrontation { background: rgba(255,0,0,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 50px 30px; border-radius: 15px; margin: 40px 0; }
+        .confrontation-item { font-size: 0.9rem; color: #bbb; margin-bottom: 20px; display: flex; align-items: center; }
         .confrontation-item::before { content: "✕"; color: var(--primary); margin-right: 15px; font-weight: bold; }
-        .confrontation-footer { text-align: center; color: #444; font-size: 0.85rem; font-style: italic; margin-top: 25px; }
+        .confrontation-footer { text-align: center; color: #444; font-size: 0.85rem; font-style: italic; margin-top: 30px; }
 
-        /* QUEBRA DE CRENÇA */
+        /* 🧠 QUEBRA DE CRENÇA */
         .belief-break { text-align: center; padding: 50px 0; }
-        .belief-break p { font-size: 1.1rem; color: #fff; font-weight: 300; }
         .belief-break b { color: var(--accent); font-size: 1.3rem; display: block; margin: 10px 0; }
 
-        /* MÉTODO E CONTEÚDO */
+        /* 📦 CONTEÚDO E MÉTODO */
         .method-section { text-align: center; padding: 40px 0; border-top: 1px solid #111; }
-        .method-section h2 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; color: var(--primary); margin-bottom: 10px; }
-        .method-section h3 { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; margin-bottom: 30px; }
-        
+        .method-section h3 { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; margin-bottom: 30px; color: #fff; }
         .content-card { background: #080808; border: 1px solid #1a1a1a; padding: 20px; border-radius: 10px; margin-bottom: 15px; text-align: left; }
         .content-card h4 { font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--accent); margin-bottom: 5px; }
         .content-card p { font-size: 0.85rem; color: #777; }
 
-        /* BÔNUS */
+        /* 🎁 BÔNUS */
         .bonus-box { border: 1px dashed var(--accent); padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center; }
-        .bonus-badge { background: var(--accent); color: #000; font-size: 0.6rem; font-weight: 900; padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+        .bonus-badge { background: var(--accent); color: #000; font-size: 0.6rem; font-weight: 900; padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 15px; }
 
-        /* VISUALIZAÇÃO E BENEFÍCIOS */
+        /* 🔥 VISUALIZAÇÃO */
         .visual-box { background: radial-gradient(circle at top, rgba(255,255,255,0.03), transparent); padding: 45px 20px; border-radius: 15px; margin: 40px 0; text-align: center; }
-        .visual-item { font-size: 1rem; color: #fff; margin: 15px 0; font-weight: 400; }
+        .visual-item { font-size: 1rem; color: #fff; margin: 15px 0; }
 
+        /* 🧠 BENEFÍCIOS */
         .benefit-item { display: flex; align-items: center; margin-bottom: 15px; font-size: 0.9rem; color: #aaa; }
         .benefit-item::before { content: "✔"; color: var(--accent); margin-right: 15px; font-weight: bold; }
 
-        /* ⭐ PROVA SOCIAL (NOMES REAIS) */
+        /* ⭐ PROVA SOCIAL */
         .t-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 20px; border-radius: 10px; margin-bottom: 15px; }
         .t-user { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .t-avatar { width: 30px; height: 30px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
         .t-stars { color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; }
         .t-copy { font-size: 0.85rem; color: #eee; font-style: italic; }
         .t-handle { display: block; font-size: 0.75rem; color: #555; margin-top: 8px; font-family: monospace; }
 
-        /* OFERTA E URGÊNCIA */
+        /* 💰 OFERTA E URGÊNCIA */
         .offer-section { text-align: center; padding: 60px 0; border-top: 1px solid #111; }
         #timer { font-family: 'Courier New', monospace; font-size: 3.5rem; font-weight: 900; color: #fff; margin: 20px 0; }
-        .price-old { font-size: 1.1rem; color: #444; text-decoration: line-through; }
         .price-new { font-size: 4.5rem; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1; margin: 10px 0; }
 
-        /* GATILHO FINAL */
-        .final-trigger { background: rgba(255,255,255,0.02); padding: 30px 20px; border-radius: 12px; margin: 40px 0; text-align: center; }
+        /* 💣 GATILHO FINAL */
+        .final-trigger { background: rgba(255,255,255,0.02); padding: 35px 25px; border-radius: 12px; margin: 40px 0; text-align: center; border-left: 3px solid var(--primary); }
 
-        /* 🔒 GARANTIA (DOBRA SEPARADA) */
+        /* 🔒 GARANTIA */
         .guarantee-fold { background: #000; border-top: 1px solid #111; padding: 60px 0; text-align: center; }
-        .guarantee-seal { width: 70px; margin-bottom: 20px; opacity: 0.6; filter: brightness(0) invert(1); }
+        .guarantee-seal { width: 70px; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.7; }
 
-        /* RODAPÉ */
+        /* 📄 RODAPÉ */
         footer { background: #000; padding: 60px 0; border-top: 1px solid #1a1a1a; text-align: center; }
-        .footer-email { color: #ffffff !important; font-weight: 800; font-size: 1.15rem; text-decoration: none; display: block; margin: 20px 0; letter-spacing: 0.5px; }
+        .footer-email { color: #ffffff !important; font-weight: 900; font-size: 1.2rem; text-decoration: none; display: block; margin: 15px 0; }
         .social-icons { display: flex; justify-content: center; gap: 25px; margin: 30px 0; }
-        .social-icons a svg { width: 22px; fill: #444; transition: 0.3s; }
+        .social-icons svg { width: 22px; fill: #444; transition: 0.3s; }
         .social-icons a:hover svg { fill: #fff; }
-        .legal-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
-        .legal-links a { color: #333; font-size: 0.65rem; text-decoration: none; text-transform: uppercase; }
+        .legal-links a { color: #333; font-size: 0.65rem; text-decoration: none; margin: 0 10px; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -132,14 +126,14 @@
 
     <section class="hero container">
         <div style="margin-bottom: 30px;">
-            <svg width="40" height="40" viewBox="0 0 100 100" style="filter: drop-shadow(0 0 10px red);">
+            <svg width="40" height="40" viewBox="0 0 100 100">
                 <path d="M50 5L90 30V70L50 95L10 70V30L50 5Z" stroke="white" stroke-width="2" fill="none"/>
                 <circle cx="50" cy="50" r="10" fill="red"/>
             </svg>
         </div>
         <h1>SE VOCÊ NÃO CONTROLA SUA MENTE, <span>VOCÊ ESTÁ SENDO CONTROLADO</span></h1>
         <p>Você já percebeu que as pessoas não te levam tão a sério quanto deveriam?</p>
-        <p class="sub-text">Pare de travar, pensar demais e ser ignorado. Assuma o controle da sua mente, da sua postura e da forma como as pessoas te enxergam.</p>
+        <p style="color: #888; font-size: 0.9rem;">Pare de travar, pensar demais e ser ignorado. Assuma o controle da sua mente, da sua postura e da forma como as pessoas te enxergam.</p>
         
         <div class="btn-wrapper">
             <a href="#checkout" class="btn-blade">QUERO ASSUMIR O CONTROLE AGORA</a>
@@ -157,32 +151,31 @@
         </div>
 
         <div class="belief-break">
-            <p>Isso não é falta de motivação.</p>
-            <p>É falta de controle.</p>
+            <p>Isso não é falta de motivação. É falta de controle.</p>
             <b>Controle é uma habilidade.</b>
             <p style="opacity: 0.5; font-size: 0.9rem;">E habilidade pode ser desenvolvida.</p>
         </div>
     </section>
 
     <section class="container method-section">
-        <h2>FOI POR ISSO QUE FOI CRIADO O</h2>
+        <h2 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--primary); margin-bottom:10px;">O CAMINHO DEFINITIVO</h2>
         <h3>MÉTODO DA MÃO OCULTA</h3>
         
-        <div class="content-card"><h4>Método da Mão Oculta 1</h4><p>A fundação do controle mental e emocional sob pressão.</p></div>
-        <div class="content-card"><h4>Método da Mão Oculta 2</h4><p>Técnicas avançadas de observação e resposta rápida.</p></div>
-        <div class="content-card"><h4>Método da Mão Oculta 3A</h4><p>O protocolo de influência invisível em grupos.</p></div>
-        <div class="content-card"><h4>Método da Mão Oculta 4</h4><p>Consolidação da presença e autoridade natural.</p></div>
+        <div class="content-card"><h4>Método da Mão Oculta 1</h4><p>Domínio do caos mental e reações instintivas.</p></div>
+        <div class="content-card"><h4>Método da Mão Oculta 2</h4><p>Postura e Linguagem da Autoridade Silenciosa.</p></div>
+        <div class="content-card"><h4>Método da Mão Oculta 3A</h4><p>Influência e leitura fria de ambientes.</p></div>
+        <div class="content-card"><h4>Método da Mão Oculta 4</h4><p>O Código do Respeito Automático.</p></div>
         
         <div class="content-card" style="border-color: var(--primary);">
             <h4 style="color: #fff;">40 DESAFIOS PRÁTICOS</h4>
-            <p>Missões reais para você aplicar os conceitos no mundo lá fora agora mesmo.</p>
+            <p>Exercícios de aplicação real para o seu dia a dia.</p>
         </div>
 
         <div class="bonus-box">
-            <span class="bonus-badge">Presente Especial</span>
+            <span class="bonus-badge">BÔNUS EXCLUSIVO</span>
             <h4 style="font-size:0.9rem; color:#fff; margin-bottom:5px;">Segredos da mente milionária</h4>
             <h4 style="font-size:0.9rem; color:#fff; margin-bottom:15px;">O poder do networking</h4>
-            <p style="font-size:0.75rem; color:#666;">Conteúdos que aceleram sua evolução.</p>
+            <p style="font-size:0.75rem; color:#666;">Aceleradores de evolução pessoal.</p>
         </div>
     </section>
 
@@ -199,64 +192,66 @@
         <div class="benefit-item">Influenciar pessoas naturalmente</div>
         <div class="benefit-item">Ter mais presença e respeito</div>
         <div class="benefit-item">Tomar decisões com clareza</div>
-        <p style="text-align:center; font-size:0.8rem; color:#444; margin-top:25px;">Sem precisar forçar. Sem precisar fingir.</p>
+        <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:25px; font-weight: 600;">Sem precisar fingir. Sem parecer forçado.</p>
     </section>
 
     <section class="container">
-        <h3 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--accent); text-align:center; margin-bottom:30px;">QUEM JÁ ESTÁ NO CONTROLE</h3>
+        <h3 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--accent); text-align:center; margin-bottom:30px;">FEEDBACK DOS MEMBROS</h3>
         
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★★</div></div>
+            <div class="t-user"><div class="t-stars">★★★★★</div></div>
             <p class="t-copy">Usei isso numa conversa e senti na hora.</p>
             <span class="t-handle">— @victorxz</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★</div></div>
+            <div class="t-user"><div class="t-stars">★★★★</div></div>
             <p class="t-copy">Parei de travar total. O método é absurdo.</p>
             <span class="t-handle">— @joaovr_</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★★</div></div>
+            <div class="t-user"><div class="t-stars">★★★★★</div></div>
             <p class="t-copy">Mudou minha postura. Sinto que as pessoas me respeitam mais.</p>
             <span class="t-handle">— @caiosilva</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★</div></div>
-            <p class="t-copy">Simples e direto ao ponto. Valeu cada centavo.</p>
+            <div class="t-user"><div class="t-stars">★★★★</div></div>
+            <p class="t-copy">Simples e direto. Vale muito a pena.</p>
             <span class="t-handle">— @gui.snt</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★★</div></div>
-            <p class="t-copy">Muito prático. Os desafios são o diferencial.</p>
+            <div class="t-user"><div class="t-stars">★★★★★</div></div>
+            <p class="t-copy">Muito prático. Mudança visível em poucos dias.</p>
             <span class="t-handle">— @mtheus_</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★</div></div>
-            <p class="t-copy">Vale muito a pena se você quer parar de ser ignorado.</p>
+            <div class="t-user"><div class="t-stars">★★★★</div></div>
+            <p class="t-copy">Vale muito a pena se você quer ser respeitado.</p>
             <span class="t-handle">— @r.lima</span>
         </div>
         <div class="t-card">
-            <div class="t-user"><div class="t-avatar">👤</div><div class="t-stars">★★★★★</div></div>
+            <div class="t-user"><div class="t-stars">★★★★★</div></div>
             <p class="t-copy">Funciona mesmo. Clareza mental total agora.</p>
             <span class="t-handle">— @andrezin</span>
         </div>
     </section>
 
     <section id="checkout" class="container offer-section">
-        <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.65rem; letter-spacing:1px;">ESSA CONDIÇÃO PODE SAIR DO AR A QUALQUER MOMENTO</p>
+        <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.65rem; letter-spacing:1px; margin-bottom: 10px;">ESSA CONDIÇÃO PODE SAIR DO AR A QUALQUER MOMENTO</p>
         <div id="timer">57:36:00</div>
         
-        <div class="price-old">De R$ 97,90</div>
+        <div style="color: #444; text-decoration: line-through; font-size: 1.1rem;">De R$ 97,90</div>
         <div class="price-new">R$ 29,90</div>
         <p style="font-size:0.85rem; color:#666; margin-bottom:40px;">Menos que um lanche para mudar sua forma de agir</p>
 
         <div style="font-size:0.65rem; color:#333; text-transform:uppercase; margin-bottom:40px; letter-spacing:1px;">
-            🛡️ Pagamento 100% seguro • Seus dados protegidos • Acesso liberado automaticamente
+            🛡️ Pagamento 100% seguro • Seus dados protegidos <br> 
+            <b>Acesso enviado automaticamente após pagamento</b>
         </div>
 
         <div class="final-trigger">
-            <p style="font-size:0.9rem; color:#888; margin-bottom:15px;">Se você continuar como está… nada muda. Mesmos pensamentos, mesmas atitudes, mesmos resultados.</p>
-            <p style="font-size:1.1rem; color:#fff; font-weight:800;">Ou você assume o controle… ou continua sendo controlado.</p>
+            <p style="font-size:0.95rem; color:#bbb; margin-bottom:15px;">Se você continuar como está… nada muda. Mesmos pensamentos, mesmas atitudes, mesmos resultados.</p>
+            <p style="font-size:1.05rem; color:#fff; font-weight:800; margin-bottom: 5px;">E daqui a alguns dias… tudo continua igual.</p>
+            <p style="font-size:1.15rem; color:var(--primary); font-weight:900; font-family: 'Syncopate';">Ou você assume o controle… ou continua sendo controlado.</p>
         </div>
 
         <div class="btn-wrapper">
@@ -274,21 +269,17 @@
     </section>
 
     <div style="text-align:center; padding:40px 0; background:#050505;">
-        <p style="font-size:0.7rem; color:#222; text-transform:uppercase; letter-spacing:2px;">Mais de 300 pessoas já acessaram • Alguns já estão aplicando agora</p>
+        <p style="font-size:0.7rem; color:#222; text-transform:uppercase; letter-spacing:2px;">Mais de 300 pessoas já acessaram • Aplicando agora</p>
     </div>
 
     <footer>
         <div class="container">
-            <p style="font-size:0.7rem; color:#444; text-transform:uppercase; letter-spacing:2px;">Suporte via E-mail:</p>
+            <p style="font-size:0.7rem; color:#444; text-transform:uppercase; letter-spacing:2px; margin-bottom: 5px;">Suporte Prioritário:</p>
             <a href="mailto:evoluglow03@gmail.com" class="footer-email">evoluglow03@gmail.com</a>
             
             <div class="social-icons">
-                <a href="https://instagram.com/evollgg">
-                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-                <a href="https://wa.me/5511960947920">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.222-4.715c1.541.913 3.11 1.403 4.851 1.403 5.383 0 9.761-4.379 9.764-9.766.002-5.388-4.376-9.765-9.763-9.765-5.385 0-9.764 4.379-9.765 9.765-.001 2.108.673 4.054 1.942 5.61l-.995 3.642 3.766-.989z"/></svg>
-                </a>
+                <a href="https://instagram.com/evollgg"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://wa.me/5511960947920"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.222-4.715c1.541.913 3.11 1.403 4.851 1.403 5.383 0 9.761-4.379 9.764-9.766.002-5.388-4.376-9.765-9.763-9.765-5.385 0-9.764 4.379-9.765 9.765-.001 2.108.673 4.054 1.942 5.61l-.995 3.642 3.766-.989z"/></svg></a>
             </div>
 
             <div class="legal-links">
@@ -296,12 +287,12 @@
                 <a href="#">Privacidade</a>
                 <a href="#">Reembolso</a>
             </div>
-            <p style="font-size:0.6rem; color:#222; letter-spacing: 1px;">© 2026 EVOLUGLOW – TODOS OS DIREITOS RESERVADOS</p>
+            <p style="font-size:0.6rem; color:#222; letter-spacing: 1px; margin-top: 15px;">© 2026 EVOLUGLOW – TODOS OS DIREITOS RESERVADOS</p>
         </div>
     </footer>
 
     <script>
-        // BG Animado
+        // BG Dinâmico
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -310,24 +301,23 @@
         resize();
         class Particle {
             constructor() { this.reset(); }
-            reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.5; this.speed = Math.random() * 0.2; this.opacity = Math.random() * 0.3; }
+            reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.2; this.speed = Math.random() * 0.15; this.opacity = Math.random() * 0.25; }
             update() { this.y -= this.speed; if (this.y < -10) this.reset(); }
             draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(255,255,255,${this.opacity})`; ctx.fill(); }
         }
-        for (let i = 0; i < 50; i++) particles.push(new Particle());
+        for (let i = 0; i < 60; i++) particles.push(new Particle());
         function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
         animate();
 
         // Timer
         let time = (57 * 3600) + (36 * 60);
-        function startTimer() {
+        setInterval(() => {
             const h = Math.floor(time / 3600);
             const m = Math.floor((time % 3600) / 60);
             const s = time % 60;
             document.getElementById('timer').innerText = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
             if (time > 0) time--;
-        }
-        setInterval(startTimer, 1000);
+        }, 1000);
     </script>
 </body>
 </html>

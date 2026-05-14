@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÉTODO DA MÃO OCULTA | OFICIAL</title>
+    <title>MÉTODO DA MÃO OCULTA | NÍVEL AVANÇADO</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -23,7 +23,7 @@
             background-color: var(--bg-deep); 
             color: #ffffff; 
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         canvas#canvas-bg {
@@ -35,253 +35,273 @@
 
         .container { width: 90%; max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
 
-        /* 🧲 PRIMEIRA DOBRA */
-        .hero { text-align: center; padding: 60px 0 40px; }
-        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; line-height: 1.3; margin-bottom: 25px; letter-spacing: -1px; }
-        .hero h1 span { color: var(--primary); display: block; font-size: 1.8rem; font-weight: 900; margin-top: 10px; text-shadow: 0 0 20px var(--shadow-red); }
-        .hero p { font-size: 0.95rem; color: #fff; margin-bottom: 15px; }
+        /* HERO SECTION */
+        .hero { text-align: center; padding: 100px 0 60px; }
+        .hero .pre-headline { font-family: 'Syncopate', sans-serif; font-size: 0.65rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; line-height: 1.4; margin-bottom: 30px; letter-spacing: -1px; }
+        .hero h1 span { color: var(--primary); display: block; font-size: 1.9rem; font-weight: 900; margin-top: 10px; text-shadow: 0 0 25px var(--shadow-red); }
+        .hero p { font-size: 1.05rem; color: #fff; margin-bottom: 20px; font-weight: 300; }
+        .hero .sub-p { color: #888; font-size: 0.95rem; max-width: 90%; margin: 0 auto 35px; }
 
         /* BOTOES */
-        .btn-wrapper { text-align: center; margin: 30px 0; }
+        .btn-wrapper { text-align: center; margin: 40px 0; }
         .btn-blade {
             position: relative;
             display: inline-block;
             width: 100%;
-            padding: 22px;
+            padding: 24px;
             background: var(--primary);
             color: #fff;
             text-decoration: none;
             font-weight: 900;
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             border-radius: 4px;
             text-transform: uppercase;
-            box-shadow: 0 10px 30px var(--shadow-red);
-            transition: 0.3s;
+            box-shadow: 0 10px 40px var(--shadow-red);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .btn-blade:active { transform: scale(0.98); }
+        .btn-blade:hover { transform: translateY(-3px); filter: brightness(1.2); }
+        .btn-blade:active { transform: scale(0.96); }
         
-        /* BOTÃO DE RECUSA */
         .btn-refusal {
             display: inline-block;
-            margin-top: 15px;
-            color: rgba(255,255,255,0.3);
+            margin-top: 25px;
+            color: rgba(255,255,255,0.2);
             text-decoration: none;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 400;
             transition: 0.3s;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .btn-refusal:hover { color: rgba(255,255,255,0.6); }
+        .btn-refusal:hover { color: rgba(255,255,255,0.5); text-decoration: underline; }
 
-        .microcopy { display: block; font-size: 0.65rem; color: #555; margin-top: 12px; letter-spacing: 1px; text-transform: uppercase; }
+        .microcopy { display: block; font-size: 0.6rem; color: #444; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
 
-        /* ⚠️ DOBRA DE CONFRONTO */
-        .confrontation { background: rgba(255,0,0,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 50px 30px; border-radius: 15px; margin: 40px 0; }
-        .confrontation-item { font-size: 0.9rem; color: #bbb; margin-bottom: 20px; display: flex; align-items: center; }
-        .confrontation-item::before { content: "✕"; color: var(--primary); margin-right: 15px; font-weight: bold; }
+        /* SEÇÃO DE CONTINUIDADE PSICOLÓGICA */
+        .bridge { padding: 80px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .bridge h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: var(--accent); margin-bottom: 25px; line-height: 1.5; }
+        .bridge p { font-size: 1.1rem; color: #ccc; font-weight: 300; margin-bottom: 20px; }
+        .bridge b { color: #fff; font-weight: 800; }
 
-        /* 🧠 QUEBRA DE CRENÇA */
-        .belief-break { text-align: center; padding: 50px 0; }
-        .belief-break b { color: var(--accent); font-size: 1.3rem; display: block; margin: 10px 0; }
+        /* CONFRONTO / DORES */
+        .confrontation { background: rgba(255,0,0,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 60px 30px; border-radius: 4px; margin: 40px 0; }
+        .confrontation-item { font-size: 0.95rem; color: #999; margin-bottom: 25px; display: flex; align-items: flex-start; text-align: left; }
+        .confrontation-item::before { content: "✕"; color: var(--primary); margin-right: 20px; font-weight: 900; font-size: 1.1rem; }
 
-        /* 📦 CONTEÚDO */
-        .content-card { background: #080808; border: 1px solid #1a1a1a; padding: 20px; border-radius: 10px; margin-bottom: 15px; text-align: left; }
-        .content-card h4 { font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--accent); margin-bottom: 5px; }
-        .content-card p { font-size: 0.85rem; color: #777; }
+        /* CONTEÚDO AVANÇADO */
+        .section-label { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; color: var(--primary); text-align: center; margin-bottom: 10px; letter-spacing: 4px; }
+        .section-title { font-family: 'Syncopate', sans-serif; font-size: 1.3rem; text-align: center; margin-bottom: 40px; letter-spacing: -1px; }
 
-        /* 🔥 VISUALIZAÇÃO */
-        .visual-box { background: radial-gradient(circle at top, rgba(255,255,255,0.03), transparent); padding: 45px 20px; border-radius: 15px; margin: 40px 0; text-align: center; }
-        .visual-item { font-size: 1rem; color: #fff; margin: 15px 0; }
+        .content-card { background: #060606; border: 1px solid #141414; padding: 25px; border-radius: 4px; margin-bottom: 15px; transition: 0.3s; }
+        .content-card:hover { border-color: #333; background: #080808; }
+        .content-card h4 { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 1px; }
+        .content-card p { font-size: 0.9rem; color: #888; font-weight: 400; line-height: 1.5; }
 
-        /* ⭐ PROVA SOCIAL */
-        .t-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 20px; border-radius: 10px; margin-bottom: 15px; }
-        .t-stars { color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 5px; display: block; }
-        .t-copy { font-size: 0.85rem; color: #eee; font-style: italic; }
-        .t-handle { display: block; font-size: 0.75rem; color: #555; margin-top: 8px; font-family: monospace; }
+        .exclusivity-alert { border: 1px dashed rgba(212, 175, 55, 0.3); padding: 40px 25px; border-radius: 4px; margin: 60px 0; text-align: center; background: rgba(212, 175, 55, 0.01); }
+        .exclusivity-alert h3 { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; color: #fff; margin-bottom: 20px; }
+        .exclusivity-alert p { font-size: 0.9rem; color: #666; line-height: 1.6; }
 
-        /* 💰 OFERTA */
-        #timer { font-family: 'Courier New', monospace; font-size: 3.5rem; font-weight: 900; color: #fff; margin: 20px 0; text-align: center; }
-        .price-new { font-size: 4.5rem; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1; margin: 10px 0; text-align: center; }
+        /* VISUALIZAÇÃO */
+        .visual-box { background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent); padding: 80px 20px; border-radius: 4px; margin: 60px 0; text-align: center; }
+        .visual-item { font-size: 1.1rem; color: #eee; margin: 25px 0; font-weight: 300; letter-spacing: 0.5px; }
+        .visual-item b { color: var(--primary); }
 
-        /* 💣 GATILHO FINAL */
-        .final-trigger { background: rgba(255,255,255,0.02); padding: 35px 25px; border-radius: 12px; margin: 40px 0; text-align: center; border-left: 3px solid var(--primary); }
+        /* PROVA SOCIAL */
+        .testimonials { padding: 40px 0; }
+        .t-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 25px; border-radius: 4px; margin-bottom: 20px; }
+        .t-stars { color: var(--accent); font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 12px; display: block; opacity: 0.8; }
+        .t-copy { font-size: 0.9rem; color: #ddd; font-style: italic; line-height: 1.6; }
+        .t-handle { display: block; font-size: 0.7rem; color: #444; margin-top: 15px; font-family: 'Syncopate', sans-serif; }
 
-        /* 🔒 GARANTIA */
-        .guarantee-fold { background: #000; border-top: 1px solid #111; padding: 60px 0; text-align: center; }
-        .guarantee-seal { width: 70px; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.7; }
+        /* OFERTA */
+        .timer-box { margin-top: 80px; text-align: center; }
+        #timer { font-family: 'Courier New', monospace; font-size: 3.8rem; font-weight: 900; color: #fff; margin: 15px 0; letter-spacing: -2px; }
+        .price-container { text-align: center; margin: 40px 0; }
+        .price-old { color: #333; text-decoration: line-through; font-size: 1.2rem; margin-bottom: 5px; font-weight: 600; }
+        .price-new { font-size: 4.8rem; font-weight: 900; color: #fff; letter-spacing: -4px; line-height: 1; }
 
-        /* 📄 RODAPÉ */
-        footer { background: #000; padding: 60px 0; border-top: 1px solid #1a1a1a; text-align: center; }
-        .footer-email { color: #ffffff !important; font-weight: 900; font-size: 1.2rem; text-decoration: none; display: block; margin: 15px 0; }
-        .social-icons { display: flex; justify-content: center; gap: 25px; margin: 30px 0; }
-        .social-icons svg { width: 22px; fill: #444; }
-        .legal-links a { color: #333; font-size: 0.65rem; text-decoration: none; margin: 0 10px; }
+        /* GATILHO FINAL */
+        .final-trigger { padding: 50px 30px; margin: 60px 0; text-align: center; border-left: 2px solid var(--primary); background: rgba(255,255,255,0.01); }
+        .final-trigger p { margin-bottom: 20px; line-height: 1.6; }
+
+        /* RODAPÉ E GARANTIA */
+        .guarantee-fold { background: #000; border-top: 1px solid #111; padding: 80px 0; text-align: center; }
+        .guarantee-seal { width: 60px; margin-bottom: 30px; filter: grayscale(1) brightness(2); opacity: 0.4; }
+
+        footer { background: #000; padding: 80px 0; border-top: 1px solid #111; text-align: center; }
+        .footer-email { color: #fff !important; font-weight: 900; font-size: 1.1rem; text-decoration: none; display: block; margin: 20px 0; font-family: 'Syncopate'; }
+        .social-icons { display: flex; justify-content: center; gap: 30px; margin: 40px 0; }
+        .social-icons svg { width: 20px; fill: #222; transition: 0.3s; }
+        .social-icons a:hover svg { fill: #555; }
+        .legal-links a { color: #222; font-size: 0.6rem; text-decoration: none; margin: 0 15px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 480px) {
+            .hero h1 span { font-size: 1.6rem; }
+            #timer { font-size: 3rem; }
+            .price-new { font-size: 4rem; }
+            .hero { padding: 80px 0 40px; }
+        }
     </style>
+
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1281800450392084');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1281800450392084&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1281800450392084');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1281800450392084&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
     <canvas id="canvas-bg"></canvas>
 
     <section class="hero container">
-        <div style="margin-bottom: 30px;">
-            <svg width="40" height="40" viewBox="0 0 100 100">
-                <path d="M50 5L90 30V70L50 95L10 70V30L50 5Z" stroke="white" stroke-width="2" fill="none"/>
-                <circle cx="50" cy="50" r="10" fill="red"/>
+        <span class="pre-headline">Fase 01 Concluída</span>
+        <div style="margin-bottom: 35px;">
+            <svg width="45" height="45" viewBox="0 0 100 100">
+                <path d="M50 5L90 30V70L50 95L10 70V30L50 5Z" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+                <path d="M50 20L75 35V65L50 80L25 65V35L50 20Z" stroke="red" stroke-width="2" fill="none"/>
+                <circle cx="50" cy="50" r="6" fill="red">
+                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+                </circle>
             </svg>
         </div>
-        <h1>SE VOCÊ NÃO CONTROLA SUA MENTE, <span>VOCÊ ESTÁ SENDO CONTROLADO</span></h1>
-        <p>Você já percebeu que as pessoas não te levam tão a sério quanto deveriam?</p>
-        <p style="color: #888; font-size: 0.9rem;">Pare de travar, pensar demais e ser ignorado. Assuma o controle da sua mente, da sua postura e da forma como as pessoas te enxergam.</p>
+        <h1>VOCÊ JÁ APRENDEU A ENXERGAR O JOGO.<span>AGORA CHEGOU A HORA DE CONTROLAR ELE.</span></h1>
+        
+        <p>A maioria identifica manipulação.</p>
+        <p class="sub-p">Poucos aprendem a influenciar emoções, dominar conversas e assumir o controle psicológico de qualquer ambiente.</p>
         
         <div class="btn-wrapper">
-            <a href="#checkout" class="btn-blade">QUERO ASSUMIR O CONTROLE AGORA</a>
-            <span class="microcopy">Acesso imediato • Sem risco • Leva menos de 2 minutos</span>
+            <a href="#checkout" class="btn-blade">LIBERAR O NÍVEL AVANÇADO</a>
+            <span class="microcopy">Acesso imediato • Conteúdo avançado • Leitura rápida</span>
         </div>
+    </section>
+
+    <section class="bridge container">
+        <h2>O método principal mostra como perceber manipulação.<br>Isso mostra como controlar o jogo sem demonstrar intenção.</h2>
+        <p>A maioria das pessoas continua reagindo emocionalmente mesmo depois de aprender os sinais.</p>
+        <p>Aqui, você aprende como criar <b>presença, influência silenciosa e domínio psicológico</b> em qualquer ambiente social.</p>
     </section>
 
     <section class="container">
         <div class="confrontation">
-            <div class="confrontation-item">Você trava em conversas</div>
-            <div class="confrontation-item">Você pensa demais antes de agir</div>
-            <div class="confrontation-item">Você não sabe o que dizer na hora</div>
-            <div class="confrontation-item">Você sente que não é levado a sério</div>
-            <p style="text-align: center; color: #444; font-size: 0.85rem; font-style: italic; margin-top: 30px;">E o pior… você sabe disso.</p>
-        </div>
-
-        <div class="belief-break">
-            <p>Isso não é falta de motivação. É falta de controle.</p>
-            <b>Controle é uma habilidade.</b>
-            <p style="opacity: 0.5; font-size: 0.9rem;">E habilidade pode ser desenvolvida.</p>
+            <div class="confrontation-item">Saber o que está acontecendo, mas não saber como reagir.</div>
+            <div class="confrontation-item">Ter o conhecimento, mas ainda se sentir inseguro na prática.</div>
+            <div class="confrontation-item">Ser um observador passivo em vez de um mestre da dinâmica.</div>
+            <div class="confrontation-item">Entender os sinais, mas ainda ser ignorado pelo grupo.</div>
+            <p style="text-align: center; color: #333; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px;">Isso acaba agora.</p>
         </div>
     </section>
 
-    <section class="container" style="padding: 40px 0; border-top: 1px solid #111;">
-        <h2 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--primary); text-align:center; margin-bottom:10px;">O MÉTODO</h2>
-        <h3 style="font-family:'Syncopate'; font-size:1.4rem; text-align:center; margin-bottom:30px;">MÉTODO DA MÃO OCULTA</h3>
+    <section class="container" style="padding: 60px 0;">
+        <p class="section-label">O CONTEÚDO OCULTO</p>
+        <h3 class="section-title">O NÍVEL AVANÇADO</h3>
         
-        <div class="content-card"><h4>Método da Mão Oculta 1</h4><p>Domínio do caos mental e reações instintivas.</p></div>
-        <div class="content-card"><h4>Método da Mão Oculta 2</h4><p>Postura e Linguagem da Autoridade Silenciosa.</p></div>
-        <div class="content-card"><h4>Método da Mão Oculta 3A</h4><p>Influência e leitura fria de ambientes.</p></div>
-        <div class="content-card"><h4>Método da Mão Oculta 4</h4><p>O Código do Respeito Automático.</p></div>
-        
-        <div class="content-card" style="border-color: var(--primary);">
-            <h4 style="color: #fff;">40 DESAFIOS PRÁTICOS</h4>
-            <p>Exercícios de aplicação real para o seu dia a dia.</p>
+        <div class="content-card">
+            <h4>Ritmo Emocional</h4>
+            <p>Como assumir o controle da velocidade e do tom de qualquer conversa.</p>
+        </div>
+        <div class="content-card">
+            <h4>Presença Silenciosa</h4>
+            <p>Técnicas para dominar o ambiente antes mesmo de abrir a boca.</p>
+        </div>
+        <div class="content-card">
+            <h4>Linguagem de Dominância</h4>
+            <p>Ajustes invisíveis na postura que forçam respeito automático.</p>
+        </div>
+        <div class="content-card">
+            <h4>Leitura de Insegurança</h4>
+            <p>Como detectar o ponto fraco de qualquer pessoa em segundos.</p>
+        </div>
+        <div class="content-card" style="border-color: var(--primary); background: rgba(255,0,0,0.02);">
+            <h4 style="color: #fff;">GATILHOS DE AUTORIDADE</h4>
+            <p>Frases prontas que instalam autoridade instantânea na mente alheia.</p>
         </div>
 
-        <div style="border: 1px dashed var(--accent); padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center;">
-            <span style="background:var(--accent); color:#000; font-size:0.6rem; font-weight:900; padding:3px 10px; border-radius:3px;">BÔNUS</span>
-            <h4 style="font-size:0.9rem; color:#fff; margin:10px 0 5px;">Segredos da mente milionária</h4>
-            <h4 style="font-size:0.9rem; color:#fff; margin-bottom:15px;">O poder do networking</h4>
+        <div class="exclusivity-alert">
+            <h3>Essa parte foi removida da versão principal.</h3>
+            <p>Algumas técnicas não foram colocadas no método inicial por serem intensas demais.</p>
+            <p style="margin-top: 15px; color: #999;">Esse conteúdo aprofunda influência social, leitura comportamental e domínio emocional de forma bruta.</p>
         </div>
     </section>
 
     <section class="container visual-box">
-        <h3 style="font-family:'Syncopate'; font-size:0.7rem; color:var(--accent); margin-bottom:20px;">IMAGINE ISSO:</h3>
-        <div class="visual-item">Você falando e sendo ouvido</div>
-        <div class="visual-item">Você respondendo sem travar</div>
-        <div class="visual-item">Você sendo levado a sério automaticamente</div>
+        <p class="section-label">A NOVA REALIDADE</p>
+        <div class="visual-item">Você falando e <b>sendo ouvido com atenção.</b></div>
+        <div class="visual-item">Você respondendo <b>sem hesitar ou pensar demais.</b></div>
+        <div class="visual-item">Você sendo <b>respeitado automaticamente</b> em qualquer lugar.</div>
     </section>
 
-    <section class="container">
-        <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:30px;">
-            <p style="font-size:0.9rem; color:#aaa;">✔ Controlar suas ações sob pressão</p>
-            <p style="font-size:0.9rem; color:#aaa;">✔ Parar de parecer inseguro</p>
-            <p style="font-size:0.9rem; color:#aaa;">✔ Influenciar pessoas naturalmente</p>
-            <p style="font-size:0.9rem; color:#aaa;">✔ Ter mais presença e respeito</p>
-            <p style="font-size:0.9rem; color:#aaa;">✔ Tomar decisões com clareza</p>
-        </div>
-        <p style="text-align:center; font-size:0.85rem; color:#666; font-weight: 600;">Sem precisar forçar. Sem parecer alguém que você não é.</p>
-    </section>
-
-    <section class="container" style="padding: 60px 0;">
+    <section class="container testimonials">
         <div class="t-card">
             <span class="t-stars">★★★★★</span>
-            <p class="t-copy">Usei isso numa conversa e senti na hora.</p>
-            <span class="t-handle">— @victorxz</span>
+            <p class="t-copy">"O primeiro método abriu meus olhos. Esse aqui me deu as armas para agir."</p>
+            <span class="t-handle">@victorxz</span>
         </div>
         <div class="t-card">
             <span class="t-stars">★★★★★</span>
-            <p class="t-copy">Parei de travar total. O método é absurdo.</p>
-            <span class="t-handle">— @joaovr_</span>
+            <p class="t-copy">"Bizarro como as pessoas mudam o jeito de falar com você quando você aplica isso."</p>
+            <span class="t-handle">@joaovr_</span>
         </div>
         <div class="t-card">
             <span class="t-stars">★★★★★</span>
-            <p class="t-copy">Mudou minha postura. As pessoas me respeitam mais.</p>
-            <span class="t-handle">— @caiosilva</span>
-        </div>
-        <div class="t-card">
-            <span class="t-stars">★★★★</span>
-            <p class="t-copy">Muito prático. Mudança visível em poucos dias.</p>
-            <span class="t-handle">— @mtheus_</span>
-        </div>
-        <div class="t-card">
-            <span class="t-stars">★★★★★</span>
-            <p class="t-copy">Funciona mesmo. Clareza mental total agora.</p>
-            <span class="t-handle">— @andrezin</span>
+            <p class="t-copy">"Parei de ser o 'cara legal' que ninguém ouve. Agora eu domino a conversa."</p>
+            <span class="t-handle">@andrezin</span>
         </div>
     </section>
 
-    <section id="checkout" class="container" style="padding-top: 60px;">
-        <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.65rem; text-align:center; letter-spacing:1px;">ESSA CONDIÇÃO PODE SAIR DO AR A QUALQUER MOMENTO</p>
-        <div id="timer">36:00</div>
+    <section id="checkout" class="container">
+        <div class="timer-box">
+            <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.6rem; letter-spacing:2px;">OFERTA DE ACESSO ÚNICO DISPONÍVEL POR:</p>
+            <div id="timer">00:15:00</div>
+        </div>
         
-        <div style="color: #444; text-decoration: line-through; font-size: 1.1rem; text-align: center;">De R$ 97,90</div>
-        <div class="price-new">R$ 37,90</div>
+        <div class="price-container">
+            <div class="price-old">De R$ 97,90</div>
+            <div class="price-new">R$ 37,90</div>
+        </div>
         
-        <div style="font-size:0.65rem; color:#333; text-transform:uppercase; margin:40px 0; text-align:center; letter-spacing:1px;">
-            🛡️ Pagamento 100% seguro • Seus dados protegidos <br> 
-            <b>Acesso enviado automaticamente após pagamento</b>
+        <div style="font-size:0.65rem; color:#444; text-transform:uppercase; margin:40px 0; text-align:center; letter-spacing:1px; line-height: 1.8;">
+            🛡️ AMBIENTE CRIPTOGRAFADO E SEGURO <br> 
+            <b>ACESSO IMEDIATO LIBERADO APÓS A CONFIRMAÇÃO</b>
         </div>
 
         <div class="final-trigger">
-            <p style="font-size:0.95rem; color:#bbb; margin-bottom:15px;">Se você continuar como está… nada muda. Mesmos pensamentos, mesmas atitudes, mesmos resultados.</p>
-            <p style="font-size:1.05rem; color:#fff; font-weight:800; margin-bottom: 5px;">E daqui a alguns dias… tudo continua igual.</p>
-            <p style="font-size:1.15rem; color:var(--primary); font-weight:900; font-family: 'Syncopate';">Ou você assume o controle… ou continua sendo controlado.</p>
+            <p style="font-size:0.95rem; color:#888;">Você pode parar na identificação dos sinais...</p>
+            <p style="font-size:1.1rem; color:#fff; font-weight:800;">Ou aprender a controlar a dinâmica inteira.</p>
+            <p style="font-size:0.9rem; color:var(--primary); font-family: 'Syncopate'; margin-top: 25px; letter-spacing: 1px;">Sem essa etapa, você continua entendendo o jogo… mas ainda reage a ele.</p>
         </div>
 
         <div class="btn-wrapper">
-            <a href="https://pay.kirvano.com/7ef4d563-4de6-49b2-9373-86c0a3f302b9" class="btn-blade">QUERO ASSUMIR O CONTROLE AGORA</a>
-            <span class="microcopy">Acesso imediato • Sem risco</span>
+            <a href="https://pay.kirvano.com/7ef4d563-4de6-49b2-9373-86c0a3f302b9" class="btn-blade">DESBLOQUEAR ACESSO COMPLETO</a>
+            <span class="microcopy">Liberação imediata no seu e-mail</span>
             
-            <a href="https://evollg.github.io/Manipula-o-e-timidez/" class="btn-refusal">“Não, quero continuar como estou”</a>
+            <a href="https://evollg.github.io/Manipula-o-e-timidez/" class="btn-refusal">Não, quero continuar apenas reagindo ao jogo</a>
         </div>
     </section>
 
     <section class="guarantee-fold">
         <div class="container">
             <img src="https://cdn-icons-png.flaticon.com/512/2550/2550354.png" class="guarantee-seal" alt="Garantia">
-            <h4 style="font-family:'Syncopate'; font-size:0.85rem; color:#fff; margin-bottom:15px;">RISCO ZERO – GARANTIA DE 7 DIAS</h4>
-            <p style="font-size:0.85rem; color:#666; max-width:400px; margin: 0 auto;">Teste o Método da Mão Oculta. Se não gostar, devolvemos 100% do seu dinheiro. Sem perguntas. Sem complicação.</p>
+            <h4 style="font-family:'Syncopate'; font-size:0.8rem; color:#fff; margin-bottom:20px; letter-spacing: 2px;">PROTEÇÃO TOTAL AO ALUNO</h4>
+            <p style="font-size:0.9rem; color:#555; max-width:400px; margin: 0 auto; font-weight: 300;">Se o nível avançado não entregar o domínio que prometemos em 7 dias, basta um e-mail para receber 100% do valor de volta. O risco é todo nosso.</p>
         </div>
     </section>
 
-    <div style="text-align:center; padding:40px 0; background:#050505;">
-        <p style="font-size:0.7rem; color:#222; text-transform:uppercase; letter-spacing:2px;">Mais de 300 pessoas já acessaram • Aplicando agora</p>
-    </div>
-
     <footer>
         <div class="container">
-            <p style="font-size:0.7rem; color:#444; text-transform:uppercase; letter-spacing:2px;">Suporte Prioritário:</p>
+            <p style="font-size:0.6rem; color:#333; text-transform:uppercase; letter-spacing:3px; margin-bottom: 10px;">Contato Direto:</p>
             <a href="mailto:evoluglow03@gmail.com" class="footer-email">evoluglow03@gmail.com</a>
             
             <div class="social-icons">
@@ -294,12 +314,12 @@ src="https://www.facebook.com/tr?id=1281800450392084&ev=PageView&noscript=1"
                 <a href="https://evollg.github.io/Privacidade/">Privacidade</a>
                 <a href="https://evollg.github.io/Reembolso-/">Reembolso</a>
             </div>
-            <p style="font-size:0.6rem; color:#222; letter-spacing: 1px; margin-top: 15px;">© 2026 EVOLUGLOW – TODOS OS DIREITOS RESERVADOS</p>
+            <p style="font-size:0.5rem; color:#1a1a1a; letter-spacing: 2px; margin-top: 30px; text-transform: uppercase;">© 2026 EVOLUGLOW • SISTEMA DE ALTA PERFORMANCE</p>
         </div>
     </footer>
 
     <script>
-        // BG Dinâmico
+        // BG Dinâmico Mantido
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -307,23 +327,6 @@ src="https://www.facebook.com/tr?id=1281800450392084&ev=PageView&noscript=1"
         window.addEventListener('resize', resize); resize();
         class Particle {
             constructor() { this.reset(); }
-            reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.2; this.speed = Math.random() * 0.15; this.opacity = Math.random() * 0.25; }
+            reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.2; this.speed = Math.random() * 0.1; this.opacity = Math.random() * 0.2; }
             update() { this.y -= this.speed; if (this.y < -10) this.reset(); }
-            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(255,255,255,${this.opacity})`; ctx.fill(); }
-        }
-        for (let i = 0; i < 50; i++) particles.push(new Particle());
-        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
-        animate();
-
-        // Timer
-        let time = (57 * 3600) + (36 * 60);
-        setInterval(() => {
-            const h = Math.floor(time / 3600);
-            const m = Math.floor((time % 3600) / 60);
-            const s = time % 60;
-            document.getElementById('timer').innerText = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-            if (time > 0) time--;
-        }, 1000);
-    </script>
-</body>
-</html>
+            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(255,255,255,${this.opacity}

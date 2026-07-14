@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÉTODO DA MÃO OCULTA | NÍVEL AVANÇADO</title>
+    <title>MÉTODO DA MÃO OCULTA | SISTEMA COMPLETO</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -37,11 +37,11 @@
 
         /* HERO SECTION */
         .hero { text-align: center; padding: 100px 0 60px; }
-        .hero .pre-headline { font-family: 'Syncopate', sans-serif; font-size: 0.65rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        .hero .pre-headline { font-family: 'Syncopate', sans-serif; font-size: 0.65rem; color: #4CAF50; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 700; }
         .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; line-height: 1.4; margin-bottom: 30px; letter-spacing: -1px; }
         .hero h1 span { color: var(--primary); display: block; font-size: 1.9rem; font-weight: 900; margin-top: 10px; text-shadow: 0 0 25px var(--shadow-red); }
         .hero p { font-size: 1.05rem; color: #fff; margin-bottom: 20px; font-weight: 300; }
-        .hero .sub-p { color: #888; font-size: 0.95rem; max-width: 90%; margin: 0 auto 35px; }
+        .hero .sub-p { color: #888; font-size: 0.95rem; max-width: 95%; margin: 0 auto 35px; }
 
         /* BOTOES */
         .btn-wrapper { text-align: center; margin: 40px 0; }
@@ -68,7 +68,7 @@
         .btn-refusal {
             display: inline-block;
             margin-top: 25px;
-            color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.25);
             text-decoration: none;
             font-size: 0.65rem;
             font-weight: 400;
@@ -76,31 +76,39 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .btn-refusal:hover { color: rgba(255,255,255,0.5); text-decoration: underline; }
+        .btn-refusal:hover { color: rgba(255,255,255,0.6); text-decoration: underline; }
 
         .microcopy { display: block; font-size: 0.6rem; color: #444; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
 
-        /* SEÇÃO DE CONTINUIDADE PSICOLÓGICA */
-        .bridge { padding: 80px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        .bridge h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: var(--accent); margin-bottom: 25px; line-height: 1.5; }
-        .bridge p { font-size: 1.1rem; color: #ccc; font-weight: 300; margin-bottom: 20px; }
-        .bridge b { color: #fff; font-weight: 800; }
+        /* SEÇÕES DE COPY ADICIONAIS */
+        .section-separator { border-top: 1px solid rgba(255,255,255,0.05); margin: 60px 0; }
+        
+        .deep-analysis { padding: 40px 0; text-align: left; }
+        .deep-analysis h2 { font-family: 'Syncopate', sans-serif; font-size: 0.95rem; color: var(--accent); margin-bottom: 25px; line-height: 1.5; text-align: center; }
+        .deep-analysis p { font-size: 0.95rem; color: #aaa; margin-bottom: 20px; font-weight: 300; }
+        .deep-analysis b { color: #fff; }
 
-        /* CONFRONTO / DORES */
-        .confrontation { background: rgba(255,0,0,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 60px 30px; border-radius: 4px; margin: 40px 0; }
-        .confrontation-item { font-size: 0.95rem; color: #999; margin-bottom: 25px; display: flex; align-items: flex-start; text-align: left; }
+        /* BLOCOS DE CONFRONTO & ERROS COMENTADOS */
+        .confrontation { background: rgba(255,0,0,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 50px 30px; border-radius: 4px; margin: 40px 0; }
+        .confrontation-title { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--primary); margin-bottom: 30px; text-align: center; letter-spacing: 1px; }
+        .confrontation-item { font-size: 0.95rem; color: #999; margin-bottom: 25px; display: flex; align-items: flex-start; text-align: left; line-height: 1.5; }
         .confrontation-item::before { content: "✕"; color: var(--primary); margin-right: 20px; font-weight: 900; font-size: 1.1rem; }
 
-        /* CONTEÚDO AVANÇADO */
+        .solution-contrast { background: rgba(212,175,55,0.01); border: 1px solid rgba(212,175,55,0.05); padding: 50px 30px; border-radius: 4px; margin: 40px 0; }
+        .solution-title { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--accent); margin-bottom: 30px; text-align: center; letter-spacing: 1px; }
+        .solution-item { font-size: 0.95rem; color: #ccc; margin-bottom: 25px; display: flex; align-items: flex-start; text-align: left; line-height: 1.5; }
+        .solution-item::before { content: "✔"; color: var(--accent); margin-right: 20px; font-weight: 900; font-size: 1.1rem; }
+
+        /* CONTEÚDO REAL */
         .section-label { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; color: var(--primary); text-align: center; margin-bottom: 10px; letter-spacing: 4px; }
         .section-title { font-family: 'Syncopate', sans-serif; font-size: 1.3rem; text-align: center; margin-bottom: 40px; letter-spacing: -1px; }
 
         .content-card { background: #060606; border: 1px solid #141414; padding: 25px; border-radius: 4px; margin-bottom: 15px; transition: 0.3s; }
         .content-card:hover { border-color: #333; background: #080808; }
         .content-card h4 { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 1px; }
-        .content-card p { font-size: 0.9rem; color: #888; font-weight: 400; line-height: 1.5; }
+        .content-card p { font-size: 0.9rem; color: #888; font-weight: 400; line-height: 1.6; }
 
-        .exclusivity-alert { border: 1px dashed rgba(212, 175, 55, 0.3); padding: 40px 25px; border-radius: 4px; margin: 60px 0; text-align: center; background: rgba(212, 175, 55, 0.01); }
+        .exclusivity-alert { border: 1px dashed rgba(212, 175, 55, 0.3); padding: 45px 25px; border-radius: 4px; margin: 60px 0; text-align: center; background: rgba(212, 175, 55, 0.01); }
         .exclusivity-alert h3 { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; color: #fff; margin-bottom: 20px; }
         .exclusivity-alert p { font-size: 0.9rem; color: #666; line-height: 1.6; }
 
@@ -115,6 +123,12 @@
         .t-stars { color: var(--accent); font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 12px; display: block; opacity: 0.8; }
         .t-copy { font-size: 0.9rem; color: #ddd; font-style: italic; line-height: 1.6; }
         .t-handle { display: block; font-size: 0.7rem; color: #444; margin-top: 15px; font-family: 'Syncopate', sans-serif; }
+
+        /* FAQ SECTION */
+        .faq-section { padding: 60px 0; }
+        .faq-item { background: #060606; border: 1px solid #111; padding: 25px; border-radius: 4px; margin-bottom: 15px; }
+        .faq-question { font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: #fff; margin-bottom: 10px; letter-spacing: 0.5px; line-height: 1.4; }
+        .faq-answer { font-size: 0.85rem; color: #666; line-height: 1.6; }
 
         /* OFERTA */
         .timer-box { margin-top: 80px; text-align: center; }
@@ -140,7 +154,7 @@
 
         /* RESPONSIVIDADE */
         @media (max-width: 480px) {
-            .hero h1 span { font-size: 1.6rem; }
+            .hero h1 span { font-size: 1.5rem; }
             #timer { font-size: 3rem; }
             .price-new { font-size: 4rem; }
             .hero { padding: 80px 0 40px; }
@@ -166,8 +180,8 @@
     <canvas id="canvas-bg"></canvas>
 
     <section class="hero container">
-        <span class="pre-headline" style="color: #4CAF50; letter-spacing: 2px;">✔ PEDIDO CONFIRMADO COM SUCESSO</span>
-        <p style="font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">O seu acesso já está sendo enviado para o seu e-mail.</p>
+        <span class="pre-headline">✔ PEDIDO PROCESSADO COM SUCESSO</span>
+        <p style="font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">O seu acesso ao manual base já foi liberado e enviado ao e-mail.</p>
         
         <div style="margin-bottom: 35px;">
             <svg width="45" height="45" viewBox="0 0 100 100">
@@ -178,142 +192,123 @@
                 </circle>
             </svg>
         </div>
-        <h1>ESPERE! NÃO FECHE ESTA TELA.<span>VOCÊ DESBLOQUEOU UMA OPORTUNIDADE ÚNICA.</span></h1>
+        <h1>ESPERE! NÃO FECHE ESTA TELA.<span>ESSA É UMA OPORTUNIDADE DE TRANSIÇÃO ÚNICA.</span></h1>
         
-        <p>O que você acabou de comprar é extremamente poderoso.</p>
-        <p class="sub-p">Mas antes de acessar sua área de membros, você tem uma <b>única chance</b> de adicionar a expansão completa ao seu pedido. Ela complementa exatamente o que você acabou de adquirir.</p>
+        <p>Você tomou a decisão correta e garantiu o seu acesso.</p>
+        <p class="sub-p">Porém, antes de avançar para a área de membros, você tem **uma única oportunidade** de desbloquear o sistema avançado. Ela complementa e fecha o ciclo de tudo o que você acabou de adquirir.</p>
         
         <div class="btn-wrapper">
-            <a href="#checkout" class="btn-blade">VER A EXPANSÃO OCULTA</a>
-            <span class="microcopy">Leva apenas 1 minuto • Leitura rápida</span>
+            <a href="#checkout" class="btn-blade">COMPLETAR MEU ACESSO</a>
+            <span class="microcopy">Oferta exclusiva de transição • Apenas agora</span>
         </div>
     </section>
 
-    <section class="bridge container">
-        <h2>O método inicial te ensina a ler o jogo.<br>Esta expansão te ensina a dominar os jogadores.</h2>
-        <p>Quem tem apenas o método inicial consegue excelentes resultados. Mas quem adiciona este aprofundamento ao pedido ganha <b>mais velocidade, ferramentas práticas e domínio absoluto.</b></p>
-        <p>É o sistema completo que faltava para fechar o ciclo.</p>
+    <div class="container"><div class="section-separator"></div></div>
+
+    <section class="container deep-analysis">
+        <h2>Você acabou de garantir a base teórica essencial.<br>Agora, desbloqueie o nível avançado de aplicação.</h2>
+        <p>O manual que você acabou de comprar ensina detalhadamente a enxergar as dinâmicas silenciosas e os sinais de quem domina ambientes. Mas conhecer a teoria é apenas 50% do caminho.</p>
+        <p>A verdade incômoda é: <b>conhecer as regras do jogo não impede que você continue sendo afetado emocionalmente por elas.</b></p>
+        <p>Para deixar de ser apenas um observador atento e se tornar o agente ativo que dita o tom, você precisa das estratégias avançadas de contenção e influência que estão no sistema completo.</p>
     </section>
 
     <section class="container">
         <div class="confrontation">
-            <div class="confrontation-item">Sem essa expansão, você entenderá os sinais de manipulação, mas pode hesitar na hora de agir.</div>
-            <div class="confrontation-item">Você aprenderá a teoria inicial, mas perderá os exercícios e ferramentas práticas de presença.</div>
-            <div class="confrontation-item">Continuará precisando pensar muito antes de responder, ao invés de usar os Gatilhos Automáticos.</div>
-            <p style="text-align: center; color: #333; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px;">Por que parar na metade?</p>
+            <div class="confrontation-title">O RISCO DE PARAR PELA METADE</div>
+            <div class="confrontation-item">Você aprenderá a decifrar as pessoas, mas continuará reagindo de forma previsível sob forte pressão.</div>
+            <div class="confrontation-item">Saberá exatamente quando alguém está tentando te manipular, mas hesitará em como neutralizar a ação sem expor suas intenções.</div>
+            <div class="confrontation-item">Continuará gastando energia mental tentando formular respostas em vez de agir sob mecanismos automáticos.</div>
         </div>
     </section>
 
-    <section class="container" style="padding: 60px 0;">
-        <p class="section-label">O QUE VOCÊ ESTÁ ADICIONANDO</p>
-        <h3 class="section-title">EXPANSÃO: O NÍVEL AVANÇADO</h3>
+    <section class="container">
+        <div class="solution-contrast">
+            <div class="solution-title">O QUE MUDA COM O SISTEMA COMPLETO</div>
+            <div class="solution-item">Sua reação sob estímulo social deixa de ser impulsiva e passa a ser friamente calculada.</div>
+            <div class="solution-item">Você projeta respeito silencioso antes mesmo de proferir a primeira palavra.</div>
+            <div class="solution-item">Domina a dinâmica interna de reuniões, conversas e interações tensas de maneira totalmente invisível.</div>
+        </div>
+    </section>
+
+    <div class="container"><div class="section-separator"></div></div>
+
+    <section class="container" style="padding: 40px 0;">
+        <p class="section-label">A CONTEXTUALIZAÇÃO DO SISTEMA</p>
+        <h3 class="section-title">OS 4 MÉTODOS DE DOMÍNIO</h3>
+        <p style="text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 40px; font-weight: 300;">O Método da Mão Oculta é dividido em 4 pilares sequenciais estruturados para a sua transformação social imediata:</p>
         
         <div class="content-card">
-            <h4>Módulo 1: Ritmo Emocional</h4>
-            <p>Mais do que entender, você vai aprender a ditar a velocidade e o tom de qualquer conversa, deixando o outro no seu ritmo.</p>
+            <h4>Método da Mão Oculta I</h4>
+            <p>Focado no domínio absoluto do caos mental. Você aprenderá como gerenciar reações instintivas rápidas e neutralizar as respostas fisiológicas automáticas causadas pela insegurança ou intimidação de terceiros.</p>
         </div>
         <div class="content-card">
-            <h4>Módulo 2: Presença Silenciosa</h4>
-            <p>Técnicas e checklists de linguagem corporal para dominar o ambiente antes mesmo de abrir a boca.</p>
+            <h4>Método da Mão Oculta II</h4>
+            <p>O pilar da linguagem corporal e postura. Roteiros práticos de ajustes micro-posturais invisíveis que estabelecem dominância e geram uma sensação de autoridade natural em qualquer ambiente social ou profissional.</p>
         </div>
         <div class="content-card">
-            <h4>Ferramenta: Linguagem de Dominância</h4>
-            <p>Ajustes invisíveis e práticos na postura que forçam respeito automático imediato, para aplicar hoje mesmo.</p>
+            <h4>Método da Mão Oculta III</h4>
+            <p>O sistema de influência sutil e leitura fria. Como analisar de forma imperceptível o comportamento de todos ao redor, mapear vulnerabilidades emocionais e se posicionar estrategicamente sem demonstrar intenção.</p>
         </div>
         <div class="content-card">
-            <h4>Estratégia: Leitura de Insegurança</h4>
-            <p>O método exato para detectar o ponto fraco de qualquer pessoa em poucos segundos de observação.</p>
-        </div>
-        <div class="content-card" style="border-color: var(--primary); background: rgba(255,0,0,0.02);">
-            <h4 style="color: #fff;">SISTEMA BÔNUS: GATILHOS DE AUTORIDADE</h4>
-            <p>Um arsenal de frases prontas e roteiros que instalam autoridade instantânea na mente alheia. Basta copiar e usar.</p>
+            <h4>Método da Mão Oculta IV</h4>
+            <p>O Código do Respeito Automático. Exercícios projetados para automatizar suas respostas sob pressão e forçar limites psicológicos em interações cruciais, evitando que você volte aos velhos padrões reativos.</p>
         </div>
 
         <div class="exclusivity-alert">
-            <h3>Esta oferta só existe porque você acabou de se tornar aluno.</h3>
-            <p>Esta não é uma página pública. O Nível Avançado não estará disponível na sua área de membros por este valor especial.</p>
-            <p style="margin-top: 15px; color: #999;">Assim que você fechar esta tela, o link de desconto expira e a oferta desaparece para sempre.</p>
+            <h3>Por que esses métodos não estavam no material básico?</h3>
+            <p>O material inicial cobre a fundação de leitura e percepção dos sinais. Esta extensão contém estratégias muito mais invasivas de autodomínio e quebra de padrões psicológicos.</p>
+            <p style="margin-top: 15px; color: #666; line-height: 1.5;">Esta oferta de upgrade foi desenvolvida exclusivamente para quem já demonstrou interesse real ao garantir a primeira etapa. Ela não é oferecida de forma pública.</p>
         </div>
     </section>
 
+    <div class="container"><div class="section-separator"></div></div>
+
     <section class="container visual-box">
-        <p class="section-label">O SISTEMA COMPLETO TE DÁ:</p>
-        <div class="visual-item">A habilidade de falar e <b>ser o único ouvido com atenção.</b></div>
-        <div class="visual-item">Um repertório para responder <b>sem hesitar ou pensar demais.</b></div>
-        <div class="visual-item">O poder de ser <b>respeitado automaticamente</b>, complementando o que você já comprou.</div>
+        <p class="section-label">A EVOLUÇÃO NA PRÁTICA</p>
+        <div class="visual-item">Você assume o <b>controle do seu ritmo emocional</b> sob stress.</div>
+        <div class="visual-item">Para de parecer inseguro ou <b>facilmente influenciável.</b></div>
+        <div class="visual-item">Implementa os 4 métodos para ter <b>presença inabalável</b> em qualquer mesa.</div>
     </section>
 
+    <div class="container"><div class="section-separator"></div></div>
+
     <section class="container testimonials">
+        <h3 style="text-align: center; font-family: 'Syncopate'; font-size: 0.75rem; color: #444; margin-bottom: 40px; letter-spacing: 2px;">O RESULTADO DOS ALUNOS DO COMBO</h3>
         <div class="t-card">
             <span class="t-stars">★★★★★</span>
-            <p class="t-copy">"Comprei o método e quase pulei essa página. Ainda bem que adicionei. As ferramentas práticas dessa expansão são absurdas."</p>
+            <p class="t-copy">"O primeiro manual mudou meus olhos. Mas a verdadeira virada de chave aconteceu quando peguei os outros 3 pilares. Sem a parte prática de contenção, eu continuaria apenas assistindo ao jogo acontecer."</p>
             <span class="t-handle">@victorxz</span>
         </div>
         <div class="t-card">
             <span class="t-stars">★★★★★</span>
-            <p class="t-copy">"O primeiro me ensinou a observar. Esse aqui me ensinou a dominar. O combo perfeito."</p>
+            <p class="t-copy">"Bizarro como a postura se alinha de forma automática. O Método II na prática faz as pessoas mudarem o tom de voz e o respeito instantaneamente."</p>
             <span class="t-handle">@joaovr_</span>
         </div>
         <div class="t-card">
             <span class="t-stars">★★★★★</span>
-            <p class="t-copy">"Vale muito mais do que custa. Apliquei os gatilhos de autoridade hoje no trabalho e a mudança de tratamento foi bizarra."</p>
+            <p class="t-copy">"Trabalho em reuniões longas. O Método III para leitura fria de ambientes mudou totalmente a minha moral nas negociações deste mês."</p>
             <span class="t-handle">@andrezin</span>
         </div>
     </section>
 
-    <section id="checkout" class="container">
-        <div class="timer-box">
-            <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.6rem; letter-spacing:2px;">ESTA PÁGINA EXPIRA EM:</p>
-            <div id="timer">00:15:00</div>
-        </div>
+    <div class="container"><div class="section-separator"></div></div>
+
+    <section class="container faq-section">
+        <p class="section-label" style="text-align: center;">RESPOSTAS DIRETAS</p>
+        <h3 class="section-title">PERGUNTAS FREQUENTES</h3>
         
-        <div class="price-container">
-            <div class="price-old">De R$ 97,90</div>
-            <div class="price-new">R$ 37,90</div>
+        <div class="faq-item">
+            <div class="faq-question">Eu preciso mesmo desse aprofundamento agora?</div>
+            <div class="faq-answer">O manual básico fornece a base de leitura. Os Métodos II, III e IV dão as ferramentas práticas de reação e contra-ataque. Se você deseja apenas entender o ambiente, o básico é suficiente. Se quer controlar a sua própria postura nele, o sistema completo é indispensável.</div>
         </div>
-        
-        <div style="font-size:0.65rem; color:#444; text-transform:uppercase; margin:40px 0; text-align:center; letter-spacing:1px; line-height: 1.8;">
-            🛡️ COMPRA SEGURA COM 1 CLIQUE <br> 
-            <b>O ACESSO É LIBERADO AUTOMATICAMENTE NA SUA CONTA</b>
+        <div class="faq-item">
+            <div class="faq-question">Como funciona a liberação?</div>
+            <div class="faq-answer">Como você já inseriu seus dados de pagamento no primeiro checkout, a liberação é imediata. Ao aceitar o upgrade, as novas instruções de acesso e os módulos complementares são consolidados de forma automática no e-mail já cadastrado.</div>
         </div>
-
-        <div class="final-trigger">
-            <p style="font-size:0.95rem; color:#888;">Você já investiu em você mesmo hoje. Não faz sentido parar no meio do caminho.</p>
-            <p style="font-size:1.1rem; color:#fff; font-weight:800;">Adicione a expansão agora e complete sua transformação.</p>
-            <p style="font-size:0.9rem; color:var(--primary); font-family: 'Syncopate'; margin-top: 25px; letter-spacing: 1px;">Fechando esta página, essa oportunidade de upgrade é perdida.</p>
+        <div class="faq-item">
+            <div class="faq-question">Posso comprar este upgrade depois na área de membros?</div>
+            <div class="faq-answer">Não por este valor. Esta é uma oferta única de transição de carrinho. Caso decida fechar esta página, o acesso avulso dentro da área de membros será reajustado para o preço padrão de R$ 97,90.</div>
         </div>
-
-        <div class="btn-wrapper">
-            <a href="https://pay.kirvano.com/7ef4d563-4de6-49b2-9373-86c0a3f302b9" class="btn-blade">SIM, QUERO COMPLETAR MEU ACESSO</a>
-            <span class="microcopy">Adição imediata ao seu pacote atual</span>
-            
-            <a href="https://evollg.github.io/Manipula-o-e-timidez/" class="btn-refusal">Não, vou me contentar apenas com o método básico.</a>
-        </div>
-    </section>
-
-    <section class="guarantee-fold">
-        <div class="container">
-            <img src="https://cdn-icons-png.flaticon.com/512/2550/2550354.png" class="guarantee-seal" alt="Garantia">
-            <h4 style="font-family:'Syncopate'; font-size:0.8rem; color:#fff; margin-bottom:20px; letter-spacing: 2px;">CONTINUAÇÃO PROTEGIDA</h4>
-            <p style="font-size:0.9rem; color:#555; max-width:400px; margin: 0 auto; font-weight: 300;">Adicione ao seu pedido com zero risco. Se a expansão não superar suas expectativas nos próximos 7 dias, devolvemos 100% do valor do Nível Avançado. Sem perguntas.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p style="font-size:0.6rem; color:#333; text-transform:uppercase; letter-spacing:3px; margin-bottom: 10px;">Contato Direto:</p>
-            <a href="mailto:evoluglow03@gmail.com" class="footer-email">evoluglow03@gmail.com</a>
-            
-            <div class="social-icons">
-                <a href="https://instagram.com/evollgg"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="https://wa.me/5511960947920"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.222-4.715c1.541.913 3.11 1.403 4.851 1.403 5.383 0 9.761-4.379 9.764-9.766.002-5.388-4.376-9.765-9.763-9.765-5.385 0-9.764 4.379-9.765 9.765-.001 2.108.673 4.054 1.942 5.61l-.995 3.642 3.766-.989z"/></svg></a>
-            </div>
-
-            <div class="legal-links">
-                <a href="https://evollg.github.io/Termosuso/">Termos</a>
-                <a href="https://evollg.github.io/Privacidade/">Privacidade</a>
-                <a href="https://evollg.github.io/Reembolso-/">Reembolso</a>
-            </div>
-            <p style="font-size:0.5rem; color:#1a1a1a; letter-spacing: 2px; margin-top: 30px; text-transform: uppercase;">© 2026 EVOLUGLOW • SISTEMA DE ALTA PERFORMANCE</p>
-        </div>
-   
+        <div class="faq-item">
+            <div class="faq-question">E se eu não me adaptar ao conteúdo avançado?</div>
+            <div class="faq-answer">Você tem uma garantia total de 7 dias protegendo este upgrade. Se os métodos p

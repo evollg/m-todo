@@ -1,319 +1,450 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÉTODO DA MÃO OCULTA | NÍVEL AVANÇADO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <title>Complete Seu Acesso - Método da Mão Oculta</title>
+    
+    <!-- Fontes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <style>
+        /* === VARIÁVEIS DE ESTILO === */
         :root {
-            --primary: #ff0000;
-            --accent: #d4af37;
-            --bg-deep: #030303;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --shadow-red: rgba(255, 0, 0, 0.4);
+            --bg-color: #070707;
+            --surface-color: #121212;
+            --surface-light: #1e1e1e;
+            --gold-primary: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-dark: #997A00;
+            --text-main: #E0E0E0;
+            --text-muted: #A0A0A0;
+            --success: #198754;
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        html { scroll-behavior: smooth; }
+        /* === RESET & BASE === */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-deep); 
-            color: #ffffff; 
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
             overflow-x: hidden;
-            line-height: 1.8;
         }
-
-        canvas#canvas-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at center, #0a0a0a 0%, #030303 100%);
-        }
-
-        .container { width: 90%; max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
-
-        /* HERO SECTION */
-        .hero { text-align: center; padding: 100px 0 60px; }
-        .hero .pre-headline { font-family: 'Syncopate', sans-serif; font-size: 0.65rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; }
-        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; line-height: 1.4; margin-bottom: 30px; letter-spacing: -1px; }
-        .hero h1 span { color: var(--primary); display: block; font-size: 1.9rem; font-weight: 900; margin-top: 10px; text-shadow: 0 0 25px var(--shadow-red); }
-        .hero p { font-size: 1.05rem; color: #fff; margin-bottom: 20px; font-weight: 300; }
-        .hero .sub-p { color: #888; font-size: 0.95rem; max-width: 90%; margin: 0 auto 35px; }
-
-        /* BOTOES */
-        .btn-wrapper { text-align: center; margin: 40px 0; }
-        .btn-blade {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            padding: 24px;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 900;
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            box-shadow: 0 10px 40px var(--shadow-red);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .btn-blade:hover { transform: translateY(-3px); filter: brightness(1.2); }
-        .btn-blade:active { transform: scale(0.96); }
         
-        .btn-refusal {
-            display: inline-block;
-            margin-top: 25px;
-            color: rgba(255,255,255,0.2);
-            text-decoration: none;
-            font-size: 0.65rem;
-            font-weight: 400;
-            transition: 0.3s;
+        /* === BARRA DE CONFIRMAÇÃO === */
+        .top-bar {
+            background-color: var(--success);
+            color: #fff;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 800;
+            font-size: 0.95rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            position: relative;
+            z-index: 100;
         }
-        .btn-refusal:hover { color: rgba(255,255,255,0.5); text-decoration: underline; }
 
-        .microcopy { display: block; font-size: 0.6rem; color: #444; margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+        /* === CONTAINERS === */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .section-padding { padding: 80px 0; }
 
-        /* SEÇÃO DE CONTINUIDADE PSICOLÓGICA */
-        .bridge { padding: 80px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        .bridge h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: var(--accent); margin-bottom: 25px; line-height: 1.5; }
-        .bridge p { font-size: 1.1rem; color: #ccc; font-weight: 300; margin-bottom: 20px; }
-        .bridge b { color: #fff; font-weight: 800; }
+        /* === TIPOGRAFIA === */
+        h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; }
+        
+        .gold-text {
+            background: linear-gradient(to right, var(--gold-light), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        /* CONFRONTO / DORES */
-        .confrontation { background: rgba(255,0,0,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 60px 30px; border-radius: 4px; margin: 40px 0; }
-        .confrontation-item { font-size: 0.95rem; color: #999; margin-bottom: 25px; display: flex; align-items: flex-start; text-align: left; }
-        .confrontation-item::before { content: "✕"; color: var(--primary); margin-right: 20px; font-weight: 900; font-size: 1.1rem; }
+        /* === HERO SECTION === */
+        .hero { text-align: center; padding: 60px 0 40px; }
+        .warning-text {
+            color: var(--gold-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            display: inline-block;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 24px; }
+        .hero p.subheadline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
 
-        /* CONTEÚDO AVANÇADO */
-        .section-label { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; color: var(--primary); text-align: center; margin-bottom: 10px; letter-spacing: 4px; }
-        .section-title { font-family: 'Syncopate', sans-serif; font-size: 1.3rem; text-align: center; margin-bottom: 40px; letter-spacing: -1px; }
+        /* === VÍDEO VSL === */
+        .vsl-container {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            background: var(--surface-color);
+            margin: 0 auto 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .vsl-placeholder { color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 2px; }
 
-        .content-card { background: #060606; border: 1px solid #141414; padding: 25px; border-radius: 4px; margin-bottom: 15px; transition: 0.3s; }
-        .content-card:hover { border-color: #333; background: #080808; }
-        .content-card h4 { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 1px; }
-        .content-card p { font-size: 0.9rem; color: #888; font-weight: 400; line-height: 1.5; }
+        /* === BOTÕES & CTA === */
+        .cta-wrapper { text-align: center; margin: 40px 0; }
+        .btn-primary {
+            display: inline-block;
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+            color: #000;
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            padding: 24px 32px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+            animation: pulse-glow 3s infinite;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+        .cta-subtext {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .cta-subtext svg { width: 16px; fill: var(--success); }
 
-        .exclusivity-alert { border: 1px dashed rgba(212, 175, 55, 0.3); padding: 40px 25px; border-radius: 4px; margin: 60px 0; text-align: center; background: rgba(212, 175, 55, 0.01); }
-        .exclusivity-alert h3 { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; color: #fff; margin-bottom: 20px; }
-        .exclusivity-alert p { font-size: 0.9rem; color: #666; line-height: 1.6; }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
 
-        /* VISUALIZAÇÃO */
-        .visual-box { background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent); padding: 80px 20px; border-radius: 4px; margin: 60px 0; text-align: center; }
-        .visual-item { font-size: 1.1rem; color: #eee; margin: 25px 0; font-weight: 300; letter-spacing: 0.5px; }
-        .visual-item b { color: var(--primary); }
+        /* === TEMPORIZADOR === */
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 24px;
+        }
+        .time-box {
+            background: var(--surface-light);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 70px;
+        }
+        .time-box span { display: block; font-size: 1.5rem; font-weight: 800; font-family: var(--font-heading); color: var(--gold-primary); }
+        .time-box label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
 
-        /* PROVA SOCIAL */
-        .testimonials { padding: 40px 0; }
-        .t-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 25px; border-radius: 4px; margin-bottom: 20px; }
-        .t-stars { color: var(--accent); font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 12px; display: block; opacity: 0.8; }
-        .t-copy { font-size: 0.9rem; color: #ddd; font-style: italic; line-height: 1.6; }
-        .t-handle { display: block; font-size: 0.7rem; color: #444; margin-top: 15px; font-family: 'Syncopate', sans-serif; }
+        /* === ARGUMENTAÇÃO === */
+        .argumentation { background-color: var(--surface-color); text-align: center; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .argumentation p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 24px; color: #ccc; }
+        .argumentation h2 { font-size: 2rem; margin-bottom: 30px; }
 
-        /* OFERTA */
-        .timer-box { margin-top: 80px; text-align: center; }
-        #timer { font-family: 'Courier New', monospace; font-size: 3.8rem; font-weight: 900; color: #fff; margin: 15px 0; letter-spacing: -2px; }
-        .price-container { text-align: center; margin: 40px 0; }
-        .price-old { color: #333; text-decoration: line-through; font-size: 1.2rem; margin-bottom: 5px; font-weight: 600; }
-        .price-new { font-size: 4.8rem; font-weight: 900; color: #fff; letter-spacing: -4px; line-height: 1; }
+        /* === CARDS DE MÉTODO === */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+        .method-card {
+            background: var(--surface-light);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            padding: 40px 30px;
+            position: relative;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        .method-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            opacity: 0; transition: var(--transition);
+        }
+        .method-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.3); }
+        .method-card:hover::before { opacity: 1; }
+        .method-card h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--gold-primary); }
+        .method-info { margin-bottom: 12px; font-size: 0.95rem; }
+        .method-info strong { color: #fff; }
 
-        /* GATILHO FINAL */
-        .final-trigger { padding: 50px 30px; margin: 60px 0; text-align: center; border-left: 2px solid var(--primary); background: rgba(255,255,255,0.01); }
-        .final-trigger p { margin-bottom: 20px; line-height: 1.6; }
+        /* === FAQ === */
+        .faq-item {
+            background: var(--surface-light);
+            margin-bottom: 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-muted);
+        }
+        .faq-answer p { padding-bottom: 20px; }
+        .faq-icon { color: var(--gold-primary); font-size: 1.5rem; transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
 
-        /* RODAPÉ E GARANTIA */
-        .guarantee-fold { background: #000; border-top: 1px solid #111; padding: 80px 0; text-align: center; }
-        .guarantee-seal { width: 60px; margin-bottom: 30px; filter: grayscale(1) brightness(2); opacity: 0.4; }
+        /* === GARANTIA === */
+        .guarantee {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: radial-gradient(circle at center, var(--surface-light) 0%, var(--bg-color) 100%);
+            margin: 60px auto;
+        }
+        .guarantee-icon svg { width: 80px; fill: var(--gold-primary); }
+        .guarantee-text h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .guarantee-text p { color: var(--text-muted); font-size: 0.95rem; }
 
-        footer { background: #000; padding: 80px 0; border-top: 1px solid #111; text-align: center; }
-        .footer-email { color: #fff !important; font-weight: 900; font-size: 1.1rem; text-decoration: none; display: block; margin: 20px 0; font-family: 'Syncopate'; }
-        .social-icons { display: flex; justify-content: center; gap: 30px; margin: 40px 0; }
-        .social-icons svg { width: 20px; fill: #222; transition: 0.3s; }
-        .social-icons a:hover svg { fill: #555; }
-        .legal-links a { color: #222; font-size: 0.6rem; text-decoration: none; margin: 0 15px; text-transform: uppercase; letter-spacing: 1px; }
+        /* === FOOTER === */
+        .footer {
+            background: var(--surface-color);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .footer-links { margin: 20px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold-primary); }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 480px) {
-            .hero h1 span { font-size: 1.6rem; }
-            #timer { font-size: 3rem; }
-            .price-new { font-size: 4rem; }
-            .hero { padding: 80px 0 40px; }
+        /* === ANIMAÇÕES DE SCROLL === */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* === RESPONSIVIDADE === */
+        @media (max-width: 768px) {
+            .guarantee { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .hero { padding: 40px 0 20px; }
+            .btn-primary { font-size: 1rem; padding: 20px; }
+            .timer-container { gap: 10px; }
+            .time-box { min-width: 60px; padding: 8px; }
         }
     </style>
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1281800450392084');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1281800450392084&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
-    <canvas id="canvas-bg"></canvas>
+    <!-- BARRA DE APROVAÇÃO -->
+    <div class="top-bar">
+        🟢 Pagamento Aprovado! Seu acesso ao produto principal está garantido.
+    </div>
 
+    <!-- HERO SECTION -->
     <section class="hero container">
-        <span class="pre-headline" style="color: #4CAF50; letter-spacing: 2px;">✔ PEDIDO CONFIRMADO COM SUCESSO</span>
-        <p style="font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">O seu acesso já está sendo enviado para o seu e-mail.</p>
+        <div class="warning-text reveal">Aviso: Não feche esta página ainda</div>
         
-        <div style="margin-bottom: 35px;">
-            <svg width="45" height="45" viewBox="0 0 100 100">
-                <path d="M50 5L90 30V70L50 95L10 70V30L50 5Z" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
-                <path d="M50 20L75 35V65L50 80L25 65V35L50 20Z" stroke="red" stroke-width="2" fill="none"/>
-                <circle cx="50" cy="50" r="6" fill="red">
-                    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
-                </circle>
-            </svg>
-        </div>
-        <h1>ESPERE! NÃO FECHE ESTA TELA.<span>VOCÊ DESBLOQUEOU UMA OPORTUNIDADE ÚNICA.</span></h1>
+        <h1 class="reveal">
+            Você garantiu as peças do jogo.<br>
+            <span class="gold-text">Agora, descubra como dar o Xeque-Mate.</span>
+        </h1>
         
-        <p>O que você acabou de comprar é extremamente poderoso.</p>
-        <p class="sub-p">Mas antes de acessar sua área de membros, você tem uma <b>única chance</b> de adicionar a expansão completa ao seu pedido. Ela complementa exatamente o que você acabou de adquirir.</p>
-        
-        <div class="btn-wrapper">
-            <a href="#checkout" class="btn-blade">VER A EXPANSÃO OCULTA</a>
-            <span class="microcopy">Leva apenas 1 minuto • Leitura rápida</span>
-        </div>
-    </section>
+        <p class="subheadline reveal">
+            Existe apenas um próximo passo. Antes de liberar seu acesso definitivo à área de membros, você tem uma única oportunidade de acessar a <strong>versão completa e ininterrupta</strong> do seu arsenal. 
+        </p>
 
-    <section class="bridge container">
-        <h2>O método inicial te ensina a ler o jogo.<br>Esta expansão te ensina a dominar os jogadores.</h2>
-        <p>Quem tem apenas o método inicial consegue excelentes resultados. Mas quem adiciona este aprofundamento ao pedido ganha <b>mais velocidade, ferramentas práticas e domínio absoluto.</b></p>
-        <p>É o sistema completo que faltava para fechar o ciclo.</p>
-    </section>
-
-    <section class="container">
-        <div class="confrontation">
-            <div class="confrontation-item">Sem essa expansão, você entenderá os sinais de manipulação, mas pode hesitar na hora de agir.</div>
-            <div class="confrontation-item">Você aprenderá a teoria inicial, mas perderá os exercícios e ferramentas práticas de presença.</div>
-            <div class="confrontation-item">Continuará precisando pensar muito antes de responder, ao invés de usar os Gatilhos Automáticos.</div>
-            <p style="text-align: center; color: #333; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px;">Por que parar na metade?</p>
-        </div>
-    </section>
-
-    <section class="container" style="padding: 60px 0;">
-        <p class="section-label">O QUE VOCÊ ESTÁ ADICIONANDO</p>
-        <h3 class="section-title">EXPANSÃO: O NÍVEL AVANÇADO</h3>
-        
-        <div class="content-card">
-            <h4>Módulo 1: Ritmo Emocional</h4>
-            <p>Mais do que entender, você vai aprender a ditar a velocidade e o tom de qualquer conversa, deixando o outro no seu ritmo.</p>
-        </div>
-        <div class="content-card">
-            <h4>Módulo 2: Presença Silenciosa</h4>
-            <p>Técnicas e checklists de linguagem corporal para dominar o ambiente antes mesmo de abrir a boca.</p>
-        </div>
-        <div class="content-card">
-            <h4>Ferramenta: Linguagem de Dominância</h4>
-            <p>Ajustes invisíveis e práticos na postura que forçam respeito automático imediato, para aplicar hoje mesmo.</p>
-        </div>
-        <div class="content-card">
-            <h4>Estratégia: Leitura de Insegurança</h4>
-            <p>O método exato para detectar o ponto fraco de qualquer pessoa em poucos segundos de observação.</p>
-        </div>
-        <div class="content-card" style="border-color: var(--primary); background: rgba(255,0,0,0.02);">
-            <h4 style="color: #fff;">SISTEMA BÔNUS: GATILHOS DE AUTORIDADE</h4>
-            <p>Um arsenal de frases prontas e roteiros que instalam autoridade instantânea na mente alheia. Basta copiar e usar.</p>
+        <div class="vsl-container reveal">
+            <span class="vsl-placeholder">[ SEU VÍDEO DE UPSELL AQUI ]</span>
         </div>
 
-        <div class="exclusivity-alert">
-            <h3>Esta oferta só existe porque você acabou de se tornar aluno.</h3>
-            <p>Esta não é uma página pública. O Nível Avançado não estará disponível na sua área de membros por este valor especial.</p>
-            <p style="margin-top: 15px; color: #999;">Assim que você fechar esta tela, o link de desconto expira e a oferta desaparece para sempre.</p>
-        </div>
-    </section>
-
-    <section class="container visual-box">
-        <p class="section-label">O SISTEMA COMPLETO TE DÁ:</p>
-        <div class="visual-item">A habilidade de falar e <b>ser o único ouvido com atenção.</b></div>
-        <div class="visual-item">Um repertório para responder <b>sem hesitar ou pensar demais.</b></div>
-        <div class="visual-item">O poder de ser <b>respeitado automaticamente</b>, complementando o que você já comprou.</div>
-    </section>
-
-    <section class="container testimonials">
-        <div class="t-card">
-            <span class="t-stars">★★★★★</span>
-            <p class="t-copy">"Comprei o método e quase pulei essa página. Ainda bem que adicionei. As ferramentas práticas dessa expansão são absurdas."</p>
-            <span class="t-handle">@victorxz</span>
-        </div>
-        <div class="t-card">
-            <span class="t-stars">★★★★★</span>
-            <p class="t-copy">"O primeiro me ensinou a observar. Esse aqui me ensinou a dominar. O combo perfeito."</p>
-            <span class="t-handle">@joaovr_</span>
-        </div>
-        <div class="t-card">
-            <span class="t-stars">★★★★★</span>
-            <p class="t-copy">"Vale muito mais do que custa. Apliquei os gatilhos de autoridade hoje no trabalho e a mudança de tratamento foi bizarra."</p>
-            <span class="t-handle">@andrezin</span>
-        </div>
-    </section>
-
-    <section id="checkout" class="container">
-        <div class="timer-box">
-            <p style="color:var(--primary); font-family:'Syncopate'; font-size:0.6rem; letter-spacing:2px;">ESTA PÁGINA EXPIRA EM:</p>
-            <div id="timer">00:15:00</div>
-        </div>
-        
-        <div class="price-container">
-            <div class="price-old">De R$ 97,90</div>
-            <div class="price-new">R$ 37,90</div>
-        </div>
-        
-        <div style="font-size:0.65rem; color:#444; text-transform:uppercase; margin:40px 0; text-align:center; letter-spacing:1px; line-height: 1.8;">
-            🛡️ COMPRA SEGURA COM 1 CLIQUE <br> 
-            <b>O ACESSO É LIBERADO AUTOMATICAMENTE NA SUA CONTA</b>
-        </div>
-
-        <div class="final-trigger">
-            <p style="font-size:0.95rem; color:#888;">Você já investiu em você mesmo hoje. Não faz sentido parar no meio do caminho.</p>
-            <p style="font-size:1.1rem; color:#fff; font-weight:800;">Adicione a expansão agora e complete sua transformação.</p>
-            <p style="font-size:0.9rem; color:var(--primary); font-family: 'Syncopate'; margin-top: 25px; letter-spacing: 1px;">Fechando esta página, essa oportunidade de upgrade é perdida.</p>
-        </div>
-
-        <div class="btn-wrapper">
-            <a href="https://pay.kirvano.com/7ef4d563-4de6-49b2-9373-86c0a3f302b9" class="btn-blade">SIM, QUERO COMPLETAR MEU ACESSO</a>
-            <span class="microcopy">Adição imediata ao seu pacote atual</span>
-            
-            <a href="https://evollg.github.io/Manipula-o-e-timidez/" class="btn-refusal">Não, vou me contentar apenas com o método básico.</a>
-        </div>
-    </section>
-
-    <section class="guarantee-fold">
-        <div class="container">
-            <img src="https://cdn-icons-png.flaticon.com/512/2550/2550354.png" class="guarantee-seal" alt="Garantia">
-            <h4 style="font-family:'Syncopate'; font-size:0.8rem; color:#fff; margin-bottom:20px; letter-spacing: 2px;">CONTINUAÇÃO PROTEGIDA</h4>
-            <p style="font-size:0.9rem; color:#555; max-width:400px; margin: 0 auto; font-weight: 300;">Adicione ao seu pedido com zero risco. Se a expansão não superar suas expectativas nos próximos 7 dias, devolvemos 100% do valor do Nível Avançado. Sem perguntas.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p style="font-size:0.6rem; color:#333; text-transform:uppercase; letter-spacing:3px; margin-bottom: 10px;">Contato Direto:</p>
-            <a href="mailto:evoluglow03@gmail.com" class="footer-email">evoluglow03@gmail.com</a>
-            
-            <div class="social-icons">
-                <a href="https://instagram.com/evollgg"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="https://wa.me/5511960947920"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.222-4.715c1.541.913 3.11 1.403 4.851 1.403 5.383 0 9.761-4.379 9.764-9.766.002-5.388-4.376-9.765-9.763-9.765-5.385 0-9.764 4.379-9.765 9.765-.001 2.108.673 4.054 1.942 5.61l-.995 3.642 3.766-.989z"/></svg></a>
+        <div class="cta-wrapper reveal">
+            <!-- TIMER -->
+            <div class="timer-container" id="countdown">
+                <div class="time-box"><span id="min">15</span><label>Minutos</label></div>
+                <div class="time-box"><span id="sec">00</span><label>Segundos</label></div>
             </div>
 
-            <div class="legal-links">
-                <a href="https://evollg.github.io/Termosuso/">Termos</a>
-                <a href="https://evollg.github.io/Privacidade/">Privacidade</a>
-                <a href="https://evollg.github.io/Reembolso-/">Reembolso</a>
+            <button class="btn-primary" onclick="alert('Integração de 1 Clique Acontece Aqui')">
+                SIM, QUERO COMPLETAR MEU ACESSO
+            </button>
+            
+            <div class="cta-subtext">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Compra com 1 Clique. O valor será adicionado à sua fatura atual sem precisar preencher dados.</span>
             </div>
-            <p style="font-size:0.5rem; color:#1a1a1a; letter-spacing: 2px; margin-top: 30px; text-transform: uppercase;">© 2026 EVOLUGLOW • SISTEMA DE ALTA PERFORMANCE</p>
         </div>
-   
+    </section>
+
+    <!-- ARGUMENTAÇÃO LÓGICA -->
+    <section class="argumentation section-padding">
+        <div class="container">
+            <h2 class="reveal">Por que você está vendo isso apenas agora?</h2>
+            <p class="reveal">
+                O produto que você acabou de comprar te dá a visão. Ele te ensina a ler o ambiente, entender os comportamentos e identificar as estratégias alheias. <strong>Mas ler o jogo e controlar o jogo são duas coisas diferentes.</strong>
+            </p>
+            <p class="reveal">
+                Nós não incluímos a versão completa na oferta inicial por um motivo simples: 90% das pessoas não estão preparadas para esse nível de profundidade. Elas querem apenas teoria. 
+            </p>
+            <p class="reveal">
+                Mas ao concluir sua compra, você provou estar nos 10% que executam. O <strong>Método da Mão Oculta</strong> é a continuação natural. É a aplicação cirúrgica de tudo o que você está prestes a aprender.
+            </p>
+        </div>
+    </section>
+
+    <!-- APRESENTAÇÃO DOS MÉTODOS -->
+    <section class="section-padding container">
+        <h2 class="reveal" style="text-align: center; margin-bottom: 20px;">O que compõe a Versão Completa?</h2>
+        <p class="reveal" style="text-align: center; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Sem módulos inventados. Sem teoria inútil. Apenas os 4 pilares de execução prática para dominar qualquer ambiente.
+        </p>
+
+        <div class="methods-grid">
+            <!-- Mão Oculta I -->
+            <div class="method-card reveal">
+                <h3>Método da Mão Oculta I</h3>
+                <div class="method-info"><strong>Objetivo:</strong> Dominar a percepção ambiental.</div>
+                <div class="method-info"><strong>Benefício:</strong> Passar completamente despercebido enquanto coleta as informações que precisa.</div>
+                <div class="method-info"><strong>Transformação:</strong> A invisibilidade estratégica. Você dita a dinâmica sem que percebam sua presença ativa.</div>
+            </div>
+
+            <!-- Mão Oculta II -->
+            <div class="method-card reveal">
+                <h3>Método da Mão Oculta II</h3>
+                <div class="method-info"><strong>Objetivo:</strong> Engenharia de cenários e persuasão invisível.</div>
+                <div class="method-info"><strong>Benefício:</strong> Fazer com que as pessoas ajam de acordo com a sua vontade, acreditando que a ideia foi delas.</div>
+                <div class="method-info"><strong>Transformação:</strong> Controle indireto absoluto.</div>
+            </div>
+
+            <!-- Mão Oculta III -->
+            <div class="method-card reveal">
+                <h3>Método da Mão Oculta III</h3>
+                <div class="method-info"><strong>Objetivo:</strong> Desarme psicológico.</div>
+                <div class="method-info"><strong>Benefício:</strong> Ler microexpressões sutis e neutralizar ataques intelectuais antes que eles sejam verbalizados.</div>
+                <div class="method-info"><strong>Transformação:</strong> Imunidade social. Ninguém consegue encurralar você.</div>
+            </div>
+
+            <!-- Mão Oculta IV -->
+            <div class="method-card reveal">
+                <h3>Método da Mão Oculta IV</h3>
+                <div class="method-info"><strong>Objetivo:</strong> O Xeque-Mate.</div>
+                <div class="method-info"><strong>Benefício:</strong> Utilizar alavancagem emocional para fechar qualquer negociação ou conflito estritamente a seu favor.</div>
+                <div class="method-info"><strong>Transformação:</strong> O Poder Consolidado.</div>
+            </div>
+        </div>
+        
+        <div class="cta-wrapper reveal" style="margin-top: 60px;">
+            <button class="btn-primary" onclick="alert('Integração de 1 Clique Acontece Aqui')">
+                LIBERAR A VERSÃO COMPLETA AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="container reveal">
+        <div class="guarantee">
+            <div class="guarantee-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 19.93V2.9l7 3.11v4.99c0 4.67-3.13 8.98-7 10.03z"/><path d="M11 15.59l-3.3-3.3 1.42-1.42L11 12.76l4.88-4.88 1.42 1.42z"/></svg>
+            </div>
+            <div class="guarantee-text">
+                <h3>Proteção Blindada de 7 Dias</h3>
+                <p>
+                    Sua decisão está protegida. Se você acessar o <strong>Método da Mão Oculta</strong> e achar que a profundidade do material não reflete o valor investido, basta enviar um único e-mail e o valor deste upgrade será estornado integralmente. Sem perguntas, sem atritos. Você continua com o produto principal normalmente. O risco é zero.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJEÇÕES / FAQ -->
+    <section class="section-padding container">
+        <h2 class="reveal" style="text-align: center; margin-bottom: 40px;">Esclarecimento Final</h2>
+        
+        <div class="faq-container reveal">
+            <div class="faq-item">
+                <button class="faq-question">O produto principal que acabei de comprar não basta? <span class="faq-icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Basta para construir uma base extremamente sólida. Mas imagine o produto principal como o manual de um carro esportivo, e o Método da Mão Oculta como a chave para ligá-lo. Um ensina o conceito, o outro entrega a execução prática imediata em cenários reais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Vou ter acesso imediato a esse complemento? <span class="faq-icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Sim. Ao clicar no botão, o valor será adicionado ao seu pedido atual automaticamente e ambos os conteúdos (Front e Versão Completa) serão liberados no mesmo instante no seu e-mail, dentro da mesma área de membros.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">E se eu decidir comprar depois? <span class="faq-icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Essa oferta é configurada na plataforma de pagamento para aparecer <strong>exclusivamente</strong> no momento de aprovação do pedido inicial. Se você fechar esta página, o link de 1 clique expira, e o Método da Mão Oculta voltará ao seu preço normal de catálogo, fora do fluxo de desconto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Suporte:</strong> contato@seusite.com.br</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Política de Reembolso</a>
+            </div>
+            <p>&copy; 2026 Método da Mão Oculta. Todos os direitos reservados.</p>
+            <p style="font-size: 0.7rem; margin-top: 10px; color: #666;">
+                Este site não faz parte do site do Facebook ou da Meta Platforms, Inc. Além disso, este site não é endossado pelo Facebook de forma alguma. FACEBOOK é uma marca comercial da Meta Platforms, Inc.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT: TIMER, FAQ E ANIMAÇÕES -->
+    <script>
+        document.addEventListener('DOMContentLoaded

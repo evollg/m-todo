@@ -1,525 +1,501 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Seu Pedido - Método da Mão Oculta</title>
-    
-    <!-- Fonte Premium e Limpa -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete seu acesso — Protocolo Avançado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0d;
+    --bg-alt:#131316;
+    --card:#18181c;
+    --card-line:#232327;
+    --ink:#f5f3ee;
+    --ink-soft:#a3a09a;
+    --red:#c81f3b;
+    --red-bright:#e2384f;
+    --red-glow:rgba(200,31,59,0.35);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    color:#fff;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+  section{padding:68px 0;}
+  .alt{background:var(--bg-alt);}
+  .divider{height:1px; background:var(--card-line); max-width:900px; margin:0 auto;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--red-bright);
+    font-weight:600;
+  }
 
-    <style>
-        /* ========================================================
-           RESET E VARIÁVEIS
-           ======================================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+    .reveal.in{opacity:1; transform:translateY(0);}
+  }
 
-        :root {
-            --bg-light: #fafafa;
-            --bg-white: #ffffff;
-            --text-dark: #1f2937;
-            --text-muted: #4b5563;
-            --gold: #d4af37;
-            --gold-light: #fdf8e7;
-            --green: #22c55e;
-            --green-hover: #16a34a;
-            --border: #e5e7eb;
-        }
+  /* ---- BLOCO 1: CONFIRMAÇÃO ---- */
+  .confirm-bar{
+    background:#000;
+    border-bottom:1px solid var(--card-line);
+    text-align:center;
+    padding:13px 20px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    color:#8f8c86;
+  }
+  .confirm-bar strong{color:#fff;}
+  .confirm-bar .dot{
+    display:inline-block; width:7px;height:7px;border-radius:50%;
+    background:var(--red-bright); margin-right:8px;
+    box-shadow:0 0 10px var(--red-glow);
+  }
+  .confirm-block{text-align:center; padding:56px 0 10px;}
+  .check{
+    width:60px;height:60px;margin:0 auto 20px;
+    border-radius:50%;
+    border:1.5px solid var(--red);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 26px var(--red-glow);
+  }
+  .check svg{width:24px;height:24px;}
+  .confirm-block h1{font-size:24px; font-weight:600;}
+  .confirm-block .sub{margin-top:10px; color:var(--ink-soft); font-size:15px;}
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+  /* ---- BLOCO 2: OPORTUNIDADE ---- */
+  .opportunity{max-width:620px; margin:0 auto; text-align:center;}
+  .opportunity p{color:var(--ink-soft); font-size:15.5px;}
 
-        /* ========================================================
-           TIPOGRAFIA
-           ======================================================== */
-        h1, h2, h3 {
-            line-height: 1.2;
-            color: var(--text-dark);
-        }
+  /* ---- BLOCO 3+4: HEADLINE / SUBHEAD ---- */
+  .hero{text-align:center;}
+  .hero h1{
+    font-size:clamp(30px, 5vw, 48px);
+    font-weight:700;
+    line-height:1.14;
+  }
+  .hero h1 .accent{color:var(--red-bright);}
+  .hero .subhead{
+    max-width:600px; margin:20px auto 0;
+    font-size:16.5px; color:var(--ink-soft);
+  }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
+  /* ---- BLOCO 5: IMAGEM PRINCIPAL (gráfico) ---- */
+  .hero-visual{
+    margin-top:44px;
+    display:flex; justify-content:center;
+  }
+  .hero-visual svg{
+    width:min(420px, 90%);
+    height:auto;
+    filter:drop-shadow(0 0 40px var(--red-glow));
+  }
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
+  /* ---- BLOCO 6: BENEFÍCIOS ---- */
+  .section-head{text-align:center; max-width:560px; margin:0 auto 40px;}
+  .section-head h2{font-size:27px; font-weight:600; margin-top:8px;}
+  .benefits-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;
+  }
+  .benefit-card{
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:var(--radius);
+    padding:24px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .benefit-card:hover{border-color:var(--red); transform:translateY(-3px);}
+  .benefit-card .icon{
+    width:38px;height:38px; border-radius:10px;
+    background:rgba(200,31,59,0.12);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .benefit-card .icon svg{width:18px;height:18px;}
+  .benefit-card h3{font-size:16px; font-weight:600; margin-bottom:6px;}
+  .benefit-card p{font-size:14px; color:var(--ink-soft);}
 
-        .highlight-gold {
-            color: var(--gold);
-        }
+  /* ---- BLOCO 7: CONTEÚDO INCLUSO ---- */
+  .content-list{display:flex; flex-direction:column; gap:12px;}
+  .content-item{
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:14px;
+    padding:18px 20px;
+    display:flex; align-items:center; gap:16px;
+  }
+  .content-item .n{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; color:var(--red-bright); font-weight:600;
+    flex:0 0 auto; width:30px;
+  }
+  .content-item .t h3{font-size:15.5px; font-weight:600;}
+  .content-item .t p{font-size:13.5px; color:var(--ink-soft); margin-top:3px;}
 
-        p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
+  /* ---- FEEDBACK DE CLIENTES ---- */
+  .testimonials-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+  }
+  .testimonial-card{
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.28);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .testimonial-card:hover{border-color:var(--red); transform:translateY(-3px);}
+  .testimonial-card .avatar{
+    width:44px;height:44px; border-radius:50%;
+    background:var(--bg-alt);
+    border:1px solid var(--card-line);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:12px;
+  }
+  .testimonial-card .avatar svg{width:20px;height:20px;}
+  .testimonial-card .name{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600; font-size:15px; color:#fff;
+  }
+  .testimonial-card .stars{display:flex; gap:2px; margin:7px 0 10px;}
+  .testimonial-card .stars svg{width:14px;height:14px;}
+  .testimonial-card .comment{font-size:13.5px; color:var(--ink-soft);}
 
-        /* ========================================================
-           ESTRUTURA E SEÇÕES
-           ======================================================== */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  @media (max-width: 900px){
+    .testimonials-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width: 600px){
+    .testimonials-grid{grid-template-columns:1fr;}
+  }
 
-        section {
-            padding: 4rem 0;
-        }
+  /* ---- BLOCO 8: VALOR PERCEBIDO ---- */
+  .value-card{
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:var(--radius);
+    padding:30px 28px;
+  }
+  .value-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 0; border-bottom:1px dashed var(--card-line);
+    font-size:14.5px;
+  }
+  .value-row:last-of-type{border-bottom:none;}
+  .value-row span:last-child{color:var(--ink-soft);}
+  .value-total{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:18px; margin-top:6px; border-top:1px solid var(--card-line);
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:17px;
+  }
 
-        .bg-white {
-            background-color: var(--bg-white);
-        }
+  /* ---- BLOCO 9: PREÇO ---- */
+  .price-block{text-align:center; margin-top:14px;}
+  .price-old{
+    color:#6b6863; text-decoration:line-through; font-size:15px;
+  }
+  .price-new{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:52px; font-weight:700;
+    color:#fff; margin-top:4px;
+  }
+  .price-new .cents{font-size:26px; color:var(--ink-soft);}
+  .price-note{font-size:13px; color:var(--ink-soft); margin-top:6px;}
 
-        .text-center {
-            text-align: center;
-        }
+  /* ---- BLOCO 10: TEMPORIZADOR ---- */
+  .timer-wrap{text-align:center; margin-top:30px;}
+  .timer-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:12px;
+  }
+  .timer{
+    display:inline-flex; gap:10px;
+  }
+  .timer .unit{
+    background:var(--card);
+    border:1px solid var(--red);
+    box-shadow:0 0 22px var(--red-glow);
+    border-radius:12px;
+    padding:12px 16px;
+    min-width:64px;
+    text-align:center;
+  }
+  .timer .unit .val{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:24px; font-weight:700; color:#fff;
+  }
+  .timer .unit .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px; color:var(--ink-soft); letter-spacing:0.08em;
+    margin-top:2px; text-transform:uppercase;
+  }
 
-        /* 1. Aviso Topo */
-        .top-banner {
-            background-color: #ecfdf5;
-            color: #065f46;
-            text-align: center;
-            padding: 12px 20px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-bottom: 1px solid #a7f3d0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+  /* ---- BLOCO 11 / 15: CTA ---- */
+  .cta-wrap{text-align:center; margin-top:34px;}
+  .cta-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    background:linear-gradient(135deg, var(--red-bright), var(--red));
+    color:#fff; font-family:'Inter', sans-serif; font-weight:700; font-size:16.5px;
+    padding:19px 36px; border:none; border-radius:14px; cursor:pointer;
+    width:100%; max-width:480px;
+    box-shadow:0 14px 30px var(--red-glow);
+    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px); box-shadow:0 18px 36px var(--red-glow); filter:brightness(1.08);}
+  .cta-btn:focus-visible{outline:3px solid #fff; outline-offset:3px;}
 
-        /* 2. Headline & 3. Explicação */
-        .hero {
-            padding-top: 5rem;
-            padding-bottom: 3rem;
-        }
+  /* ---- BOTÃO DE SCROLL PARA A OFERTA (primeira dobra) ---- */
+  .scroll-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:26px;
+    background:transparent;
+    border:1.5px solid var(--red);
+    color:#fff;
+    font-family:'Inter', sans-serif; font-weight:600; font-size:14px;
+    padding:12px 26px; border-radius:12px; cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .scroll-cta svg{width:14px; height:14px;}
+  .scroll-cta:hover{background:rgba(200,31,59,0.14); transform:translateY(-2px);}
+  .scroll-cta:focus-visible{outline:3px solid var(--red-bright); outline-offset:3px;}
 
-        .hero-box {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-top: 4px solid var(--gold);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            margin-top: 2rem;
-        }
+  /* ---- BOTÃO SECUNDÁRIO DE RECUSA (abaixo do CTA principal) ---- */
+  .cta-decline-btn{
+    display:block;
+    margin:12px auto 0;
+    background:transparent;
+    border:none;
+    color:var(--ink-soft);
+    font-family:'Inter', sans-serif; font-weight:500; font-size:13px;
+    padding:8px 14px; cursor:pointer;
+    transition:color .2s ease;
+  }
+  .cta-decline-btn:hover{color:#fff;}
+  .cta-decline-btn:focus-visible{outline:1px solid var(--ink-soft); outline-offset:3px; border-radius:6px;}
 
-        /* 4. O que você recebe (Cards) */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
+  /* ---- BLOCO 12: TEXTO PAGAMENTO ---- */
+  .cta-micro{
+    margin-top:16px; display:flex; flex-wrap:wrap; gap:10px 20px;
+    justify-content:center; font-size:13px; color:var(--ink-soft);
+  }
+  .cta-micro span{display:inline-flex; align-items:center; gap:6px;}
+  .cta-micro svg{width:14px;height:14px; color:var(--red-bright);}
 
-        .card-module {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+  /* ---- BLOCO 13: GARANTIA ---- */
+  .guarantee{
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:var(--radius);
+    padding:34px 30px;
+    display:flex; gap:22px; align-items:flex-start;
+  }
+  .guarantee .badge{
+    flex:0 0 auto; width:54px;height:54px; border-radius:50%;
+    border:1.5px solid var(--red);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .guarantee .badge svg{width:22px;height:22px;}
+  .guarantee h2{font-size:20px; font-weight:600; margin-bottom:8px;}
+  .guarantee p{color:var(--ink-soft); font-size:14.5px;}
 
-        .card-module::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gold);
-        }
+  /* ---- BLOCO 14: FAQ ---- */
+  .faq-item{border-bottom:1px solid var(--card-line);}
+  .faq-item:first-child{border-top:1px solid var(--card-line);}
+  .faq-q{
+    width:100%; background:none; border:none; text-align:left;
+    padding:20px 4px; font-family:'Inter', sans-serif; font-size:15px; font-weight:600;
+    color:var(--ink); cursor:pointer;
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .faq-q .plus{
+    flex:0 0 auto; width:22px;height:22px; border-radius:50%;
+    border:1.5px solid var(--red); position:relative;
+    transition:transform .25s ease;
+  }
+  .faq-q .plus::before, .faq-q .plus::after{
+    content:''; position:absolute; background:var(--red-bright);
+    top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+  .faq-q .plus::before{width:9px;height:1.5px;}
+  .faq-q .plus::after{width:1.5px;height:9px;}
+  .faq-item.open .plus{transform:rotate(135deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a-inner{padding:0 4px 20px; font-size:14px; color:var(--ink-soft);}
 
-        .card-module:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
+  /* ---- BLOCO 16: RECUSA ---- */
+  .decline{text-align:center; padding:30px 0 10px;}
+  .decline a{
+    color:#726f69; font-size:13.5px; text-decoration:underline;
+    text-underline-offset:3px; cursor:pointer;
+  }
+  .decline a:hover{color:var(--ink-soft);}
 
-        .card-module h4 {
-            color: var(--gold);
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
+  /* ---- BLOCO 17: RODAPÉ ---- */
+  footer{
+    background:#000;
+    border-top:1px solid var(--card-line);
+    color:#8f8c86; padding:44px 0 30px; text-align:center; font-size:13px;
+  }
+  footer a{color:#d3d0c9; text-decoration:none;}
+  footer a:hover{color:var(--red-bright);}
+  .footer-links{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; margin:16px 0;}
+  .footer-links span{color:#3a3936;}
+  .footer-social{display:flex; justify-content:center; gap:16px; margin-bottom:16px;}
+  .footer-social a{
+    width:34px;height:34px; border:1px solid var(--card-line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .footer-social a:hover{border-color:var(--red);}
+  .footer-social svg{width:15px;height:15px;}
+  footer .copy{margin-top:16px; color:#57554f; font-size:12px;}
 
-        .card-module p {
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        /* 5. Benefícios */
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--bg-light);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .benefit-item svg {
-            color: var(--green);
-            flex-shrink: 0;
-        }
-
-        /* 6. Garantia */
-        .guarantee {
-            background: var(--gold-light);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .guarantee-icon {
-            background: var(--gold);
-            color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .guarantee-text h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .guarantee-text p {
-            margin-bottom: 0;
-            font-size: 1rem;
-        }
-
-        /* 7, 8, 9. Oferta e CTA */
-        .offer-section {
-            padding: 4rem 2rem;
-            background: var(--bg-white);
-            border: 2px solid var(--gold);
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1);
-        }
-
-        .price {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin: 1.5rem 0;
-            line-height: 1;
-        }
-
-        .cta-btn {
-            display: block;
-            width: 100%;
-            background: var(--green);
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 1.2rem;
-            font-size: 1.3rem;
-            font-weight: 800;
-            border-radius: 8px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 1rem;
-        }
-
-        .cta-btn:hover {
-            background: var(--green-hover);
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
-        }
-
-        .safe-checkout {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .safe-checkout span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .decline-link {
-            display: inline-block;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .decline-link:hover {
-            color: var(--text-dark);
-        }
-
-        /* 10. FAQ */
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 1rem;
-        }
-
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            padding: 1.5rem 0;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--gold);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-answer p {
-            padding-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        /* 11. Rodapé */
-        footer {
-            background: var(--text-dark);
-            color: #9ca3af;
-            padding: 4rem 20px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--gold);
-        }
-
-        .footer-links {
-            margin: 1.5rem 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        /* ========================================================
-           RESPONSIVIDADE (Tablet & Celular)
-           ======================================================== */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.25rem; }
-            .hero-box { padding: 1.5rem; }
-            .guarantee { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
-            .offer-section { padding: 2rem 1.5rem; }
-            .price { font-size: 3rem; }
-            .cta-btn { font-size: 1.1rem; padding: 1rem; }
-            .benefits-list { grid-template-columns: 1fr; }
-        }
-    </style>
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 720px){
+    section{padding:50px 0;}
+    .benefits-grid{grid-template-columns:1fr;}
+    .guarantee{flex-direction:column;}
+    .timer .unit{min-width:52px; padding:10px 12px;}
+    .timer .unit .val{font-size:20px;}
+    .price-new{font-size:42px;}
+  }
+</style>
 </head>
 <body>
 
-    <!-- 1. Aviso -->
-    <div class="top-banner">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-        Pedido confirmado. Parabéns. Seu pagamento foi aprovado.
+<div class="confirm-bar"><span class="dot"></span>Pedido confirmado — <strong>pagamento aprovado</strong></div>
+
+<div class="wrap confirm-block reveal">
+  <div class="check">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#e2384f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <h1>Parabéns. Sua compra foi confirmada.</h1>
+  <p class="sub">Antes de liberar definitivamente seu acesso, leia o que vem a seguir.</p>
+  <button class="scroll-cta" type="button" id="scrollToOffer">
+    Ver oferta agora
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<section>
+  <div class="wrap opportunity reveal">
+    <p>Existe uma oportunidade complementar disponível apenas nesta página, para quem acabou de garantir o Método da Mão Oculta. Depois que você sair daqui, ela não estará mais disponível nesta condição.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="hero">
+  <div class="wrap reveal">
+    <h1>Você já tomou a <span class="accent">decisão certa</span>.<br>Agora falta um único passo.</h1>
+    <p class="subhead">Você garantiu a base do método. O Protocolo Avançado foi criado para quem quer transformar o que aprendeu em ação imediata, sem tentativa e erro.</p>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 320 220" fill="none">
+        <line x1="20" y1="200" x2="300" y2="200" stroke="#232327" stroke-width="1"/>
+        <path d="M40 170 L120 90 L170 130 L300 20" stroke="#c81f3b" stroke-width="2" fill="none"/>
+        <circle cx="300" cy="20" r="5" fill="#e2384f"/>
+        <circle cx="170" cy="130" r="3.5" fill="#c81f3b"/>
+        <circle cx="120" cy="90" r="3.5" fill="#c81f3b"/>
+        <circle cx="40" cy="170" r="3.5" fill="#c81f3b"/>
+      </svg>
     </div>
+  </div>
+</section>
 
-    <main>
-        <!-- 2. Headline & 3. Explicação -->
-        <section class="hero text-center">
-            <div class="container">
-                <h1>Espere! Sua compra está <span class="highlight-gold">quase completa...</span></h1>
-                <h2>Mas ainda falta a peça que acelera seus resultados.</h2>
-                
-                <div class="hero-box text-center">
-                    <p style="font-size: 1.25rem; color: var(--text-dark); font-weight: 600;">Você já garantiu o conteúdo principal. Agora existe uma oportunidade única de desbloquear o Método da Mão Oculta completo antes que seu acesso seja liberado.</p>
-                    <p style="margin-bottom: 0;">A maioria das pessoas aprende a teoria, mas trava na hora de aplicar. Por isso criamos uma continuação exclusiva que mostra exatamente como colocar tudo em prática e evitar os erros mais comuns.</p>
-                </div>
-            </div>
-        </section>
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Benefícios</span>
+      <h2>O que muda ao completar seu acesso</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="#e2384f" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Aplicação imediata</h3>
+        <p>Sai da teoria e entra em cenários reais que você enfrenta no dia a dia.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#e2384f" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="#e2384f" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Menos tentativa e erro</h3>
+        <p>Passos claros para evitar os erros mais comuns de quem está começando.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke="#e2384f" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+        <h3>Continuidade do método</h3>
+        <p>Segue exatamente a linha do que você já comprou, sem repetir conteúdo.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#e2384f" stroke-width="1.6"/><path d="M8 12h8M12 8v8" stroke="#e2384f" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Acesso liberado agora</h3>
+        <p>Sem nova compra: apenas uma adição automática ao pedido que você já fez.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- 4. O que você recebe -->
-        <section class="bg-white">
-            <div class="container">
-                <h3 class="text-center" style="font-size: 1.8rem; margin-bottom: 1rem;">O que você recebe</h3>
-                <div class="grid-cards">
-                    <div class="card-module">
-                        <h4>Método da Mão Oculta I</h4>
-                        <p>Aprenda os fundamentos que sustentam toda a estratégia e desenvolva uma visão muito mais clara sobre comportamento humano.</p>
-                    </div>
-                    <div class="card-module">
-                        <h4>Método da Mão Oculta II</h4>
-                        <p>Entenda como identificar padrões, intenções e sinais que passam despercebidos pela maioria das pessoas.</p>
-                    </div>
-                    <div class="card-module">
-                        <h4>Método da Mão Oculta III</h4>
-                        <p>Descubra estratégias para agir com mais inteligência, reduzir erros e tomar decisões com mais segurança.</p>
-                    </div>
-                    <div class="card-module">
-                        <h4>Método da Mão Oculta IV</h4>
-                        <p>Integre todo o conhecimento em um método prático para aplicar no dia a dia de forma consistente.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Conteúdo incluso</span>
+      <h2>O que você recebe no Protocolo Avançado</h2>
+    </div>
+    <div class="content-list">
+      <div class="content-item reveal">
+        <span class="n">01</span>
+        <div class="t"><h3>Aplicação prática guiada</h3><p>Exercícios diretos para colocar o método em prática desde o primeiro dia.</p></div>
+      </div>
+      <div class="content-item reveal">
+        <span class="n">02</span>
+        <div class="t"><h3>Casos e cenários reais</h3><p>Situações comuns do dia a dia analisadas passo a passo.</p></div>
+      </div>
+      <div class="content-item reveal">
+        <span class="n">03</span>
+        <div class="t"><h3>Checklist de erros comuns</h3><p>O que evitar para não travar na hora de aplicar o que aprendeu.</p></div>
+      </div>
+      <div class="content-item reveal">
+        <span class="n">04</span>
+        <div class="t"><h3>Guia de consolidação</h3><p>Como manter o que foi aprendido funcionando na prática, de forma consistente.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- 5. Benefícios -->
-        <section>
-            <div class="container text-center">
-                <h3 style="font-size: 1.8rem;">O que muda quando você adiciona este material ao seu pedido?</h3>
-                <div class="benefits-list">
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Mais clareza.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Mais estratégia.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Mais segurança para agir.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Menos decisões impulsivas.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Melhor leitura das pessoas.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Aplicação prática.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Conteúdo organizado.
-                    </div>
-                    <div class="benefit-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Continuação natural do treinamento.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Garantia -->
-        <section class="bg-white">
-            <div class="container">
-                <div class="guarantee">
-                    <div class="guarantee-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Seu risco é zero.</h3>
-                        <p>Você terá garantia conforme as condições da oferta. Se o produto não atender às suas expectativas dentro do prazo informado, poderá solicitar o reembolso conforme nossa política.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7, 8 & 9. Oferta, CTA e Recusa -->
-        <section>
-            <div class="container text-center">
-                <div class="offer-section">
-                    <h3 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 1rem;">Apenas nesta página</h3>
-                    <p style="font-size: 1.2rem; color: var(--text-dark); margin-bottom: 0;">Você acabou de comprar o conteúdo principal.</p>
-                    <p style="font-size: 1.2rem; color: var(--text-dark);">Agora pode adicionar o Método da Mão Oculta completo ao seu pedido por apenas:</p>
-                    
-                    <div class="price">R$ 37,90</div>
-
-                    <!-- Insira o link de checkout do upsell no href abaixo -->
-                    <a href="#" class="cta-btn">SIM! QUERO ADICIONAR AO MEU PEDIDO</a>
-                    
-                    <div class="safe-checkout">
-                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Compra em um clique.</span>
-                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Pagamento seguro.</span>
-                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Liberação automática.</span>
-                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Sem preencher dados novamente.</span>
-                    </div>
-
-                    <!-- Insira o link de recusa (downsell ou obrigado) no href abaixo -->
-                    <a href="#" class="decline-link">Não, prefiro continuar apenas com o conteúdo principal.</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. FAQ -->
-        <section class="bg-white">
-            <div class="container" style="max-width: 700px;">
-                <h3 class="text-center" style="font-size: 2rem; margin-bottom: 2rem;">Perguntas Frequentes</h3>
-                
-                <div class="faq-item">
-                    <button class="faq-question">Como recebo?</button>
-                    <div class="faq-answer">
-                        <p>O acesso ao Método da Mão Oculta será enviado diretamente para o seu e-mail jun
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Feedback de clientes</span>
+      <h2>O que quem já usa o método está dizendo</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="avatar"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.6" stroke="#a3a09a" stroke-width="1.6"/><path d="M4.5 19.5c1.6-3.4 4.4-5 7.5-5s5.9 1.6 7.5 5" stroke="#a3a09a" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <div class="name">Lucas Henrique</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
+        </div>
+        <p class="comment">Cara, terminei de ler o Método da Mão Oculta Avançado e foi a primeira vez que um conteúdo realmente me fez pensar diferente. Eu sempre agia por impulso, agora consigo entender melhor as pessoas antes de reagir. Parece simples, mas mudou muito a forma como converso e tom

@@ -50,9 +50,21 @@
     font-weight:600;
   }
 
-  @media (prefers-reduced-motion: no-preference){
-    .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
-    .reveal.in{opacity:1; transform:translateY(0);}
+  /*
+    IMPORTANTE: o conteúdo é VISÍVEL POR PADRÃO (opacity:1), sem depender de JavaScript.
+    A classe "js-anim" só é adicionada pelo próprio JS quando ele roda com sucesso.
+    Isso evita que a página fique com seções invisíveis caso o JavaScript seja
+    bloqueado, removido pela hospedagem ou falhe por qualquer motivo.
+  */
+  .reveal{opacity:1; transform:none;}
+  html.js-anim .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  html.js-anim .reveal.in{
+    opacity:1;
+    transform:translateY(0);
   }
 
   /* ---- BLOCO 1: CONFIRMAÇÃO ---- */
@@ -261,6 +273,7 @@
     width:100%; max-width:480px;
     box-shadow:0 14px 30px var(--red-glow);
     transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+    text-decoration:none;
   }
   .cta-btn:hover{transform:translateY(-2px); box-shadow:0 18px 36px var(--red-glow); filter:brightness(1.08);}
   .cta-btn:focus-visible{outline:3px solid #fff; outline-offset:3px;}
@@ -275,6 +288,7 @@
     font-family:'Inter', sans-serif; font-weight:600; font-size:14px;
     padding:12px 26px; border-radius:12px; cursor:pointer;
     transition:background .2s ease, transform .2s ease;
+    text-decoration:none;
   }
   .scroll-cta svg{width:14px; height:14px;}
   .scroll-cta:hover{background:rgba(200,31,59,0.14); transform:translateY(-2px);}
@@ -390,16 +404,16 @@
     <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#e2384f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
   <h1>Parabéns. Sua compra foi confirmada.</h1>
-  <p class="sub">Antes de liberar definitivamente seu acesso, leia o que vem a seguir.</p>
-  <button class="scroll-cta" type="button" id="scrollToOffer">
+  <p class="sub">Antes de você ir para a área de membros, separamos uma oportunidade rápida só para quem acabou de comprar.</p>
+  <a class="scroll-cta" href="#oferta" id="scrollToOffer">
     Ver oferta agora
     <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
+  </a>
 </div>
 
 <section>
   <div class="wrap opportunity reveal">
-    <p>Existe uma oportunidade complementar disponível apenas nesta página, para quem acabou de garantir o Método da Mão Oculta. Depois que você sair daqui, ela não estará mais disponível nesta condição.</p>
+    <p>Como você acabou de garantir o Método da Mão Oculta, preparamos uma condição complementar disponível apenas nesta página. Depois que você continuar para a área de membros, ela não aparece novamente.</p>
   </div>
 </section>
 
@@ -409,6 +423,13 @@
   <div class="wrap reveal">
     <h1>Você já tomou a <span class="accent">decisão certa</span>.<br>Agora falta um único passo.</h1>
     <p class="subhead">Você garantiu a base do método. O Protocolo Avançado foi criado para quem quer transformar o que aprendeu em ação imediata, sem tentativa e erro.</p>
+
+    <div style="margin-top:8px;">
+      <a class="scroll-cta" href="#oferta" id="scrollToOfferHero">
+        Ver oferta agora
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
 
     <div class="hero-visual" aria-hidden="true">
       <svg viewBox="0 0 320 220" fill="none">
@@ -493,9 +514,4 @@
         <div class="name">Lucas Henrique</div>
         <div class="stars">
           <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
-          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg>
-        </div>
-        <p class="comment">Cara, terminei de ler o Método da Mão Oculta Avançado e foi a primeira vez que um conteúdo realmente me fez pensar diferente. Eu sempre agia por impulso, agora consigo entender melhor as pessoas antes de reagir. Parece simples, mas mudou muito a forma como converso e tom
+          <svg viewBox="0 0 24 24" fill="#e2384f"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2
